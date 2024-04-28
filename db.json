@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "category": "Burguer",
+      "name": "hamburguer",
+      "photo": "https://lh3.googleusercontent.com/pw/AP1GczNmvh20h5Ltl0ZQZ7ibWam4JINiyTw58gD1Tdf2IHG2bC9KKZ-uoAlUNkBoWTJrd8KznTVSOvBrxF1dvvX0E4EaCXuW9ShnI9byxdI3ARDY-GzFWNZ4XMgF2hkAwbj0PTM61UUPnneVR2-OYaFFyqCxt4MVj-XXUUMTksGEJHxJuM8RgcucW3D2J4BXSBTxHFjqI_gDKY_OjtptvXNjxyYXP0o46OO2hhZohvAW2plr-HY30ZGbasd8aWba-7AkNnTw7sy9o66xnHkng6GRswLXTM5aRZoZYMTiH7h0IwCEyUMAZPqce-uq98dXJtDac_Cl4kEK5z6eIrhrHo_Pg8mfa4M8JLZyYDft-wyHcxvAxV1WqE1xGwtuIBkmTCj_LW22evWbux3BMxKKfl_aASR4voJAJ9xBqdE5E5RdF9Bp_NMrGAwxuXmTZzFnEVrl76TxWpMZemPRHovWLf6kAJIzuOuMdHUm6A2yTt4M_3hfJ8u2FCNDOpQzAg8-De3hEW_atU4gPeNlBHMGLC6wh321T5j5BFIY1D2wRbo59euewX_WcNwJ-mZ97o09vpm-Z1Rjp_2zArTlsAmajTzIMRHIG5M_mLvIzYY211oiG_Lc51_1avdCtO4pfOS3bZ1FM_Ux9DNRMLiR5xJVCF5iAc0QfBY6CxI58iNNtOEOEacvjKIEqFNmwM3ACYL6OfB-9fcTUMSrk1PE4xf0I40cbatnh0d39h4TSu8VNlmqIcNvHr_F1hS1Fm0_7pI-tOxfHjk6A_SLZvLIDt5eEcc5W6LQec_U99C314zyKiIHMhbXtqYBH9y34D8hnRALokw4bc8vnn-r_MYBo5ZTOyII1BPSP1gXoonKvT4Ju-l6lGnuntIzgKMy8lclcwvhgE_dLVWEvqzLtRhkpldWv9uVA9CalEyyRy7pUPsv1euTTRQpKXzqsAe6Bnx4=w927-h927-s-no-gm?authuser=1",
+      "price": 12,
+      "description": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface crocante e molho especial, tudo abraçado por um pão macio e dourado.",
+      "descriptionCard": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface"
+    }
+  ]
+}
