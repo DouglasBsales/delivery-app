@@ -7,7 +7,7 @@ import Menu from "@/components/Home/Menu";
 import SearchItens from "@/components/Home/SearchItens";
 import { useFetch } from "@/hooks/useFetch";
 
-const url = "http://localhost:5000/products";
+const url = "https://josn-delivery-app.vercel.app/products";
 
 export default function Home() {
   const { data: items } = useFetch(url);
