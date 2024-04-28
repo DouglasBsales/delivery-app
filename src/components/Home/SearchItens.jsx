@@ -12,7 +12,7 @@ const SearchItens = () => {
             <input
               type="text"
               placeholder="Pesquise"
-              className="text-blackOpacity outline-none rounded-r-[30px]"
+              className="w-[200px] text-blackOpacity outline-none rounded-r-[30px] pr-[16px]"
             />
           </div>
         </div>
