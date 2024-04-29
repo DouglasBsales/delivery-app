@@ -3,7 +3,7 @@ import Head from "next/head";
 import "./globals.css";
 
 const montSerrat = Montserrat({
-  weight: ["700"],
+  weight: ["200", "300", "400", "700"],
   subsets: ["latin"],
 });
 
