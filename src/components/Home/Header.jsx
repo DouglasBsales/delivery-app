@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <div>
+        <div >
           <Image
             width={47}
             height={47}
