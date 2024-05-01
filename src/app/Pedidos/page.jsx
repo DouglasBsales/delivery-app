@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Pedidos() {
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5]">
-      <div className="flex-shrink-0 w-full bg-redPrimary border">
+      <div className="flex-shrink-0 w-full bg-redPrimary">
         <div className="max-w-[393px] mx-auto px-[33px] py-9">
           <div>
             <Link
