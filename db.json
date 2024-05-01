@@ -1,10 +1,43 @@
 {
+  "BestProducts": [
+    {
+      "id": "123Gasd",
+      "category": "Burguer",
+      "name": "hamburguer",
+      "photo": "https://drive.usercontent.google.com/download?id=15CQO99VJd4C7S40vKjJTVjthHVVLJ9wH&authuser=0",
+      "price": 12,
+      "description": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface crocante e molho especial, tudo abraçado por um pão macio e dourado.",
+      "descriptionCard": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface"
+    },
+
+    {
+      "id": "Ga4&sd",
+      "category": "Pizza",
+      "name": "Pizza calabresa",
+      "photo": "https://drive.usercontent.google.com/download?id=1ZXJ9eNGRRsDGLQ0svUIjyah6r_uladsU",
+      "price": 24,
+      "description": "Uma pizza de calabresa coberta com fatias suculentas de calabresa picante, perfeitamente equilibrada com queijo derretido e molho de tomate fresco, garantindo uma explosão de sabor em cada mordida.",
+      "descriptionCard": "Uma pizza de calabresa coberta com fatias suculentas de calabresa picante"
+    },
+
+    {
+      "id": "asd4pm*23",
+      "category": "batata",
+      "name": "Batata frita",
+      "portion": "300g",
+      "photo": "https://drive.usercontent.google.com/download?id=1T0cGEa0Ay0ZJThIbK7YdH2zKBpiVZUsq",
+      "price": 15,
+      "description": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas delicadamente, oferecendo uma textura irresistível e um sabor deliciosamente satisfatório em cada porção de 300g.",
+      "descriptionCard": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas"
+    }
+  ],
+
   "products": [
     {
       "id": "123Gasd",
       "category": "Burguer",
       "name": "hamburguer",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczNAzePS88hsqJCeBMWKjAFrC5mZYdHrHdU_uWipq08tQeeo3FPqN6qC3mnIC1Hfg0PQzccSapORqsRLGyzsonq34pksKREbFleM4McWQYLrFTgE4JqgL83b6VXRdRrdgN8xfau_yILNzZP-wUaqQYLikPxSxgsVH0RLpWv41QRnzh1UfQ0NjwNx3_B3-I-80oY0L5naWoOP5Ntzww3j4PYZVncZCFPkcDkJ6ecSubEyMlCvx8yEOjly3h_Vo8Nw45dZ9QIfEUGIZURmRY0sanj_98S_lyxCXDi4u5bn04dofREE_w-80ON-gNE5cIWlUm5n5PsfiJR60UWe-GJa5dpgLlwQgvQ_XaOZUuP25Z5eISA0VW6C4hx6SzOD7aFL38LWOkVmrgYEGm7fNZ3vC8zOGvYLaE1XkYE005NIQw6el1fZnvQrbTPsOT70ODhrAo39J96lC7QdbZiku0KVa3Ckju47CU958dkwROy3gALYy4k7Kuu34eoaxzp47HjIkoGQH2WVktUE2MFdmFQqaaHxfthBxRoZwH6HYCOFVjIbrjK1GCsOdbaaw6ev4Z0VIQGkmfLve6EPNOdibG6Ggd50ShgbBG9tv1JwARMT0Aml9NVXTqux2Ll83UJ98ZtrFg9GLPi3chPVmbj79tvfhO4V1CDLWzSuKRkjXfjC33IEAk5GrSA9yy723VULAP5yF2ayJxo8KULs4IWxPTD_5DPFMbwdqTlQAerGEvdR92iovbLP-RBgzr0iuGh6iM36VI2_J_dO1Mxangn-_9orsQHbvWG9RhtwVHXVVC0BLLuz6uiDk0PXxGuh6Co6EEo31KhJlLVyHDwHkvo6MpfuPGEHtglcS-WhC7aISFQXsuitvnPXQvJbUK1ZqmMD_lsxvhqwMTwrbjF_sYynKRN93x4E_RtxmbWX-NgY7GwOPoetHIi9uHQUHADQog=w927-h927-s-no-gm?authuser=1",
+      "photo": "https://drive.usercontent.google.com/download?id=15CQO99VJd4C7S40vKjJTVjthHVVLJ9wH&authuser=0",
       "price": 12,
       "description": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface crocante e molho especial, tudo abraçado por um pão macio e dourado.",
       "descriptionCard": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface"
@@ -14,28 +47,78 @@
       "id": "93Kb*23U",
       "category": "Burguer",
       "name": "Cheese Burguer",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczOAlJTz39y4Rem8mMj7vPoI1jRI_Rglexjx-4S7ZtxI3jTXEQb52ES1EeJxJUv8XiJcQ5VEG7FP3rX0P_sGLQGIrfN02B6hjbvmcVEAdl78n1MAklf4F3o_btfdW2ckTPlAspU70AqqP0pDf4qz52fIi-zQgPQbdL2id4r0Jc2yWhzAMZTL8uOxQpecazTPoAxy4FBK9fM0WRmKvoqKWeTQjqgvPWbfUoHNboYy1TDCqIr3y6T8Cv_gJL3yzOSX5d9RSnQnK0Cqno40BoGs6pYB1nrf9X6wdKAjsyXInJYMcDyJy4qDIqdzv1hVVHiOApFHFcchjNI2jee7hYjvbkqpaNfaO2F8wB0EaocpA_un59x5YKgZvcgKauweOjYy8dzpn9fd8nfzu-kZYcnBffcpOmveDqKaGqiTwrQ5L5C6gHvprICD2zNz1tXocDVmz2-YvTBBjpURuTCtBIx85eVo_HiAQ_I0PNnhPtKiborJZAfdgy8XPFME1TECjTfRVyLU-6K1AEGxuAGPYxbuBjewNRfRkubYFZOMqKlDOcTWoeTawUQa3J9IlDq-YngU7H2AUAXUiQBPP9OhiYun6lM5LoC2lA8A0yuvRDTXG08deIAZ4r3UYBiVtH_xrhJzwODtuSFLOr20pgz5c8UNakvLlTJ75lEUmZk2fBRlA5h_FI4KjMP8Suq0q1q_7c5zA5aHhUxUSoFN4Frx_bA_XUu0KqCRu3kKUbHLoxNIG-5WoIQfxqmHBBZJ8Xbyql7f3ow_4GIo_669GthcMrXAGi31qtWJVPk5qAwlwbTRpOYbgUi4Lv3EEDnJKduhShTCwh7pFF_P5sO4-9BFqaVm7mwPEUr7YthJZyLHKrI9XO5Um4mJhechLlh670DLP2mhDOZe08qYwnruamGWHGO2xSU-DBL53ycbj4lBHhdKDME5dFsPMtI9OWLamA=w927-h927-s-no-gm?authuser=1",
+      "photo": "https://drive.usercontent.google.com/download?id=1Yrs37yWV7UA8mUFnZIGtkLKHyBJQ-TQ1",
       "price": 15,
       "description": "Um suculento cheeseburger, perfeitamente grelhado e coberto com queijo derretido, servido em um pão macio e fresco, garantindo uma explosão de sabor em cada mordida.",
       "descriptionCard": "Um suculento cheeseburger, perfeitamente grelhado e coberto com queijo"
     },
 
     {
+      "id": "Ka81àsd",
+      "category": "Burguer",
+      "name": "Burguer Bacon",
+      "photo": "https://drive.usercontent.google.com/download?id=1p3cd3Z35iJZnuTNyiNgf6Rf8o7iQK7ym",
+      "price": 18,
+      "description": "Hambúrguer artesanal, recheado com carne suculenta, queijo derretido e bacon crocante, tudo isso envolto em um pão macio e fresquinho. Uma experiência gastronômica única que vai conquistar seu coração e seu paladar.",
+      "descriptionCard": "Hambúrguer artesanal, recheado com carne suculenta, queijo derretido e bacon"
+    },
+
+    {
+      "id": "6Hb8M<14",
+      "category": "Burguer",
+      "name": "Burguer Mexicano",
+      "photo": "https://drive.usercontent.google.com/download?id=1NxXMUE17IHxBh103CTBF6zpWIQmWYz6b",
+      "price": 22,
+      "description": "Delicie-se com nosso hambúrguer picante mexicano, com carne suculenta, pimentões jalapeños, queijo derretido e uma explosão de sabores autênticos do México, tudo isso entre dois pães macios. Uma experiência de sabor que vai incendiar seus sentidos!",
+      "descriptionCard": "Hambúrguer picante mexicano, com carne suculenta, pimentões"
+    },
+
+    {
       "id": "Ga4&sd",
       "category": "Pizza",
       "name": "Pizza calabresa",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczO_UyMbAAYUAV8RziLN2vQHtGQfKHDMZ-YTt8hQnZX32xG5b6hr0TkkxhziEH3H0a1-xS3QyULJkRkhY0Njg9i0Q0wYr0Of6SmMR1vbVxiJ8mY3nUcB0rpQ4_0cxiO9Cg-YVb0Fk4A4HVC2mI4w3YW9H-aWOmk8XQZ0oNp-RlxjghTZrwxHlkRMoSLD5ipSnWo9mPT_3b2utTAgKaKgTxHnAmPr7JO7i0yolY8qG1RR-pEYgIV7NZni3gLcnS4p13wjIhp7FWDPSHSfuaakcJxhjacDlWhzGuRU8VJNwD_NZ2vAKDY-PskICViQEj74HwDKOQiM4uJjW6BI_R0izOqVhjtlb9id6YPT-CcdL86QJrUTj9ERUU5taXqv22ZYpaFOC8KgBu3EBuHrX54sLQm-M6npuZdejq3dBZPzIa4D4jasNxjnPQ0uCwsOJmIfyCLST1Plk3NWeVXNJm9rp0laQDMn70I43LMjKq95hCS7vAIqknFI-FITBRnRMCs0wCdEdKlPZY-ZJgueh4w3D78dnOzzfKVKCRPH5VO7u7hMblsujmj376Q_-Nw5Ft1WieSsbN6UyzM4e4g_25JVp4bDyNFZ1GI95J9vQGZ8sw43a2AF-no6RRplMFbwQoVI0RxwddzirrUml9hDWan7UG2QC62bF_4GY-vnHNwBTGXNlEj857sb8k4B1iebbLhJb2GiRmUHWeSOCcvb4LSuiyDVH-D2gINMIHWCqcSgCNgVTAjY4YIzR33IMuhB4knrfquV-Oc6OINs1fDvZM9V7tGur8IiL5qUE8rLvpAM8Ptb0CTyBsV9EHI4YxsdXil5bxVfn_6okhluEVZ4wTWTZl_UMBglI-IJW7IS_2cGcAx3FH6dsmRhGCspENmBCyx245m0IVpvPSY3rKABVAt030yga4tRpRMZ6FnTyvrcyTHKvQ-eCz77HECNvw=w927-h927-s-no-gm?authuser=1",
+      "photo": "https://drive.usercontent.google.com/download?id=1ZXJ9eNGRRsDGLQ0svUIjyah6r_uladsU",
       "price": 24,
       "description": "Uma pizza de calabresa coberta com fatias suculentas de calabresa picante, perfeitamente equilibrada com queijo derretido e molho de tomate fresco, garantindo uma explosão de sabor em cada mordida.",
       "descriptionCard": "Uma pizza de calabresa coberta com fatias suculentas de calabresa picante"
     },
 
     {
+      "id": "çsd5138[=aujdah",
+      "category": "Pizza",
+      "name": "Pizza carne",
+      "photo": "https://drive.usercontent.google.com/download?id=10iZOLSZaXUHFXL51k2SxPmKp1UpaXyNq",
+      "price": 26,
+      "description": "Delicie-se com nossa pizza de carne, uma combinação perfeita de carne moída temperada, cebola caramelizada e queijo derretido sobre nossa massa artesanal, coberta com molho de tomate caseiro. Uma explosão de sabores que vai conquistar seu paladar.",
+      "descriptionCard": "Uma pizza de carne, uma combinação perfeita de carne temperada cebola e "
+    },
+
+    {
+      "id": "734mhsd95723",
+      "category": "Pizza",
+      "name": "Pizza mussarela",
+      "photo": "https://drive.usercontent.google.com/download?id=1AWXmG1emHcKQ7mWWoZ35QAAJS90nOGHn",
+      "price": 20,
+      "description": "Desfrute da autêntica pizza de mussarela, com queijo muçarela derretido sobre uma base de molho de tomate fresco, tudo assado em nossa massa crocante. Um clássico que nunca decepciona.",
+      "descriptionCard": "Autêntica pizza de mussarela, com queijo muçarela derretido sobre uma base"
+    },
+
+    {
+      "id": "k1Rdm9Had",
+      "category": "Pizza",
+      "name": "Pizza doce",
+      "photo": "https://drive.usercontent.google.com/download?id=11-IAbBmfbaEbskxr6dTz3JKbx7GgEKoh",
+      "price": 20,
+      "description": "Delicie-se com nossa irresistível pizza doce de chocolate e morango, onde o chocolate derretido se combina harmoniosamente com fatias frescas de morango sobre nossa massa macia e crocante. Uma experiência indulgente que vai satisfazer seus desejos mais doces!",
+      "descriptionCard": "Pizza doce de chocolate e morango, onde o chocolate derretido se combina "
+    },
+
+    {
       "id": "asd4pm*23",
       "category": "batata",
-      "name": "Batatinha frita",
+      "name": "Batata frita",
       "portion": "300g",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczNLnw8KRpf5a4JXlud-reBToZx4oZv0Ckhre5HpadfTyphmeAZhlmhyj5gdvqfPp2TYIZrhZQSUv8rRKET9tMKY3sQJiDXQCHqv3qJotO2vFKmneVbE3ulBiXGtyB3YKJa2BUYo9K6iU6B9_eUYTEZgug42Pxkr4GDaQPIeNJmcjo3SNE6RRAspuF5yj-bH76XwbAOuthxamJ1iIpqaSFYBOe3mGC8Q_tSbIZAiI_HXYI3rh_ifzdXAVxi79RJ5cyf5bS6QEiNZRmxdvyJDi-u1zIBojmPe61zbwsmcmEp0WyvqVr_q-N3PDGbTEcsYk_vEHDK4fE53Dm52XxQlj49_dIfYbyb1Er1Tn8oNrZV9ieIn3zjsqPHj6TD7ANQ2IT6Hu50dpp-1abPTyaKhRWZrIbO_aSyoe3GLE9obdvziAz786kpYh1AgtI-4aaI1_5Zg7L6nEEqZWpc97GvjcFkzQ1S03juudFzQK8F0ZjF7zNwCpydG5cMLEfWYTstM0l97vzTkrDI047IX5RPxb4rhvJyRUOT_WBO0mFpFg5fNPu5JkMsf9fnyw-Kjnyjb5cAQIsNaQU_B0t9MdTzlo-B4j5-KlYqvyi7EZNyz7rFQ_-JsRtK5iAgSFoDloZwoo6bvbF0u7m2zW7uowF6h-RXB4e5K-MOBkL9dKchihl_KeUEgvCeZli8DHcFw7F_3qUVHf5um-wIyI1_fhTEVfVAGs5qyVkvQgaeqNiUgl1JjIvNB8eLWWMr2vJNMNw5gvWJM04EdJExCA0SZUHIQv4q5PVQuQuQPNfkkINotryLgoPmte4TcrzWo2mFXGv7-_zoLWtSlKS0WzOTUerWlLiwSxpjmV7e6gBJM7Q6ChtVlWcaCTXTEdVohwA1UhJEPaDKXlkmk6pVByGYo-_j4q-AHTNmWqwLm61yIfgp1juoqL3dbk71A4Pt7aw=w927-h927-s-no-gm?authuser=1",
+      "photo": "https://drive.usercontent.google.com/download?id=1T0cGEa0Ay0ZJThIbK7YdH2zKBpiVZUsq",
       "price": 15,
       "description": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas delicadamente, oferecendo uma textura irresistível e um sabor deliciosamente satisfatório em cada porção de 300g.",
       "descriptionCard": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas"
@@ -44,45 +127,34 @@
     {
       "id": "k$290*",
       "category": "batata",
-      "name": "Batatinha frita",
+      "name": "Batata frita",
       "portion": "600g",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczNLnw8KRpf5a4JXlud-reBToZx4oZv0Ckhre5HpadfTyphmeAZhlmhyj5gdvqfPp2TYIZrhZQSUv8rRKET9tMKY3sQJiDXQCHqv3qJotO2vFKmneVbE3ulBiXGtyB3YKJa2BUYo9K6iU6B9_eUYTEZgug42Pxkr4GDaQPIeNJmcjo3SNE6RRAspuF5yj-bH76XwbAOuthxamJ1iIpqaSFYBOe3mGC8Q_tSbIZAiI_HXYI3rh_ifzdXAVxi79RJ5cyf5bS6QEiNZRmxdvyJDi-u1zIBojmPe61zbwsmcmEp0WyvqVr_q-N3PDGbTEcsYk_vEHDK4fE53Dm52XxQlj49_dIfYbyb1Er1Tn8oNrZV9ieIn3zjsqPHj6TD7ANQ2IT6Hu50dpp-1abPTyaKhRWZrIbO_aSyoe3GLE9obdvziAz786kpYh1AgtI-4aaI1_5Zg7L6nEEqZWpc97GvjcFkzQ1S03juudFzQK8F0ZjF7zNwCpydG5cMLEfWYTstM0l97vzTkrDI047IX5RPxb4rhvJyRUOT_WBO0mFpFg5fNPu5JkMsf9fnyw-Kjnyjb5cAQIsNaQU_B0t9MdTzlo-B4j5-KlYqvyi7EZNyz7rFQ_-JsRtK5iAgSFoDloZwoo6bvbF0u7m2zW7uowF6h-RXB4e5K-MOBkL9dKchihl_KeUEgvCeZli8DHcFw7F_3qUVHf5um-wIyI1_fhTEVfVAGs5qyVkvQgaeqNiUgl1JjIvNB8eLWWMr2vJNMNw5gvWJM04EdJExCA0SZUHIQv4q5PVQuQuQPNfkkINotryLgoPmte4TcrzWo2mFXGv7-_zoLWtSlKS0WzOTUerWlLiwSxpjmV7e6gBJM7Q6ChtVlWcaCTXTEdVohwA1UhJEPaDKXlkmk6pVByGYo-_j4q-AHTNmWqwLm61yIfgp1juoqL3dbk71A4Pt7aw=w927-h927-s-no-gm?authuser=1",
+      "photo": "https://drive.usercontent.google.com/download?id=1T0cGEa0Ay0ZJThIbK7YdH2zKBpiVZUsq",
       "price": 20,
       "description": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas delicadamente, oferecendo uma textura irresistível e um sabor deliciosamente satisfatório em cada porção de 600g.",
       "descriptionCard": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas"
-    }
-  ],
-
-  "BestProducts": [
-    {
-      "id": "123Gasd",
-      "category": "Burguer",
-      "name": "hamburguer",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczNAzePS88hsqJCeBMWKjAFrC5mZYdHrHdU_uWipq08tQeeo3FPqN6qC3mnIC1Hfg0PQzccSapORqsRLGyzsonq34pksKREbFleM4McWQYLrFTgE4JqgL83b6VXRdRrdgN8xfau_yILNzZP-wUaqQYLikPxSxgsVH0RLpWv41QRnzh1UfQ0NjwNx3_B3-I-80oY0L5naWoOP5Ntzww3j4PYZVncZCFPkcDkJ6ecSubEyMlCvx8yEOjly3h_Vo8Nw45dZ9QIfEUGIZURmRY0sanj_98S_lyxCXDi4u5bn04dofREE_w-80ON-gNE5cIWlUm5n5PsfiJR60UWe-GJa5dpgLlwQgvQ_XaOZUuP25Z5eISA0VW6C4hx6SzOD7aFL38LWOkVmrgYEGm7fNZ3vC8zOGvYLaE1XkYE005NIQw6el1fZnvQrbTPsOT70ODhrAo39J96lC7QdbZiku0KVa3Ckju47CU958dkwROy3gALYy4k7Kuu34eoaxzp47HjIkoGQH2WVktUE2MFdmFQqaaHxfthBxRoZwH6HYCOFVjIbrjK1GCsOdbaaw6ev4Z0VIQGkmfLve6EPNOdibG6Ggd50ShgbBG9tv1JwARMT0Aml9NVXTqux2Ll83UJ98ZtrFg9GLPi3chPVmbj79tvfhO4V1CDLWzSuKRkjXfjC33IEAk5GrSA9yy723VULAP5yF2ayJxo8KULs4IWxPTD_5DPFMbwdqTlQAerGEvdR92iovbLP-RBgzr0iuGh6iM36VI2_J_dO1Mxangn-_9orsQHbvWG9RhtwVHXVVC0BLLuz6uiDk0PXxGuh6Co6EEo31KhJlLVyHDwHkvo6MpfuPGEHtglcS-WhC7aISFQXsuitvnPXQvJbUK1ZqmMD_lsxvhqwMTwrbjF_sYynKRN93x4E_RtxmbWX-NgY7GwOPoetHIi9uHQUHADQog=w927-h927-s-no-gm?authuser=1",
-      "price": 12,
-      "description": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface crocante e molho especial, tudo abraçado por um pão macio e dourado.",
-      "descriptionCard": "Um hambúrguer simples com carne suculenta grelhada, queijo derretido, alface"
     },
 
     {
-      "id": "Ga4&sd",
-      "category": "Pizza",
-      "name": "Pizza calabresa",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczO_UyMbAAYUAV8RziLN2vQHtGQfKHDMZ-YTt8hQnZX32xG5b6hr0TkkxhziEH3H0a1-xS3QyULJkRkhY0Njg9i0Q0wYr0Of6SmMR1vbVxiJ8mY3nUcB0rpQ4_0cxiO9Cg-YVb0Fk4A4HVC2mI4w3YW9H-aWOmk8XQZ0oNp-RlxjghTZrwxHlkRMoSLD5ipSnWo9mPT_3b2utTAgKaKgTxHnAmPr7JO7i0yolY8qG1RR-pEYgIV7NZni3gLcnS4p13wjIhp7FWDPSHSfuaakcJxhjacDlWhzGuRU8VJNwD_NZ2vAKDY-PskICViQEj74HwDKOQiM4uJjW6BI_R0izOqVhjtlb9id6YPT-CcdL86QJrUTj9ERUU5taXqv22ZYpaFOC8KgBu3EBuHrX54sLQm-M6npuZdejq3dBZPzIa4D4jasNxjnPQ0uCwsOJmIfyCLST1Plk3NWeVXNJm9rp0laQDMn70I43LMjKq95hCS7vAIqknFI-FITBRnRMCs0wCdEdKlPZY-ZJgueh4w3D78dnOzzfKVKCRPH5VO7u7hMblsujmj376Q_-Nw5Ft1WieSsbN6UyzM4e4g_25JVp4bDyNFZ1GI95J9vQGZ8sw43a2AF-no6RRplMFbwQoVI0RxwddzirrUml9hDWan7UG2QC62bF_4GY-vnHNwBTGXNlEj857sb8k4B1iebbLhJb2GiRmUHWeSOCcvb4LSuiyDVH-D2gINMIHWCqcSgCNgVTAjY4YIzR33IMuhB4knrfquV-Oc6OINs1fDvZM9V7tGur8IiL5qUE8rLvpAM8Ptb0CTyBsV9EHI4YxsdXil5bxVfn_6okhluEVZ4wTWTZl_UMBglI-IJW7IS_2cGcAx3FH6dsmRhGCspENmBCyx245m0IVpvPSY3rKABVAt030yga4tRpRMZ6FnTyvrcyTHKvQ-eCz77HECNvw=w927-h927-s-no-gm?authuser=1",
-      "price": 24,
-      "description": "Uma pizza de calabresa coberta com fatias suculentas de calabresa picante, perfeitamente equilibrada com queijo derretido e molho de tomate fresco, garantindo uma explosão de sabor em cada mordida.",
-      "descriptionCard": "Uma pizza de calabresa coberta com fatias suculentas de calabresa picante"
-    },
-
-    {
-      "id": "asd4pm*23",
+      "id": "kjd74hajsbdqi176absd",
       "category": "batata",
-      "name": "Batatinha frita",
+      "name": "Batata cheddar bacon",
       "portion": "300g",
-      "photo": "https://lh3.googleusercontent.com/pw/AP1GczNLnw8KRpf5a4JXlud-reBToZx4oZv0Ckhre5HpadfTyphmeAZhlmhyj5gdvqfPp2TYIZrhZQSUv8rRKET9tMKY3sQJiDXQCHqv3qJotO2vFKmneVbE3ulBiXGtyB3YKJa2BUYo9K6iU6B9_eUYTEZgug42Pxkr4GDaQPIeNJmcjo3SNE6RRAspuF5yj-bH76XwbAOuthxamJ1iIpqaSFYBOe3mGC8Q_tSbIZAiI_HXYI3rh_ifzdXAVxi79RJ5cyf5bS6QEiNZRmxdvyJDi-u1zIBojmPe61zbwsmcmEp0WyvqVr_q-N3PDGbTEcsYk_vEHDK4fE53Dm52XxQlj49_dIfYbyb1Er1Tn8oNrZV9ieIn3zjsqPHj6TD7ANQ2IT6Hu50dpp-1abPTyaKhRWZrIbO_aSyoe3GLE9obdvziAz786kpYh1AgtI-4aaI1_5Zg7L6nEEqZWpc97GvjcFkzQ1S03juudFzQK8F0ZjF7zNwCpydG5cMLEfWYTstM0l97vzTkrDI047IX5RPxb4rhvJyRUOT_WBO0mFpFg5fNPu5JkMsf9fnyw-Kjnyjb5cAQIsNaQU_B0t9MdTzlo-B4j5-KlYqvyi7EZNyz7rFQ_-JsRtK5iAgSFoDloZwoo6bvbF0u7m2zW7uowF6h-RXB4e5K-MOBkL9dKchihl_KeUEgvCeZli8DHcFw7F_3qUVHf5um-wIyI1_fhTEVfVAGs5qyVkvQgaeqNiUgl1JjIvNB8eLWWMr2vJNMNw5gvWJM04EdJExCA0SZUHIQv4q5PVQuQuQPNfkkINotryLgoPmte4TcrzWo2mFXGv7-_zoLWtSlKS0WzOTUerWlLiwSxpjmV7e6gBJM7Q6ChtVlWcaCTXTEdVohwA1UhJEPaDKXlkmk6pVByGYo-_j4q-AHTNmWqwLm61yIfgp1juoqL3dbk71A4Pt7aw=w927-h927-s-no-gm?authuser=1",
-      "price": 15,
-      "description": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas delicadamente, oferecendo uma textura irresistível e um sabor deliciosamente satisfatório em cada porção de 300g.",
-      "descriptionCard": "Batatas fritas douradas e crocantes, preparadas com cuidado e temperadas"
+      "photo": "https://drive.usercontent.google.com/download?id=1gL8E7J2Wu9_rbEjaP9tmsNfBbMTajAxc",
+      "price": 22,
+      "description": "Delicie-se com nossas batatas fritas cobertas com cheddar cremoso e pedaços crocantes de bacon, uma explosão de sabores em cada mordida. O acompanhamento perfeito para saciar sua vontade de um sabor irresistível, tudo em uma porção generosa de 300g.",
+      "descriptionCard": " batatas fritas cobertas com cheddar cremoso e pedaços crocantes de bacon"
+    },
+
+    {
+      "id": "kjd74hajsbd61534sd",
+      "category": "batata",
+      "name": "Batata cheddar bacon",
+      "portion": "600g",
+      "photo": "https://drive.usercontent.google.com/download?id=1gL8E7J2Wu9_rbEjaP9tmsNfBbMTajAxc",
+      "price": 26,
+      "description": "Delicie-se com nossas batatas fritas cobertas com cheddar cremoso e pedaços crocantes de bacon, uma explosão de sabores em cada mordida. O acompanhamento perfeito para saciar sua vontade de um sabor irresistível, tudo em uma porção generosa de 600g.",
+      "descriptionCard": " batatas fritas cobertas com cheddar cremoso e pedaços crocantes de bacon"
     }
   ]
 }
