@@ -37,18 +37,33 @@ const ProductPage = ({
   };
 
   const handleAddToCart = () => {
-    const newItems = Array.from({ length: countItem }, () => ({
-      photo,
-      name,
-      category,
-      price,
-      description,
-      portion,
-    }));
-    setArrayCarrinho([...arrayCarrinho, ...newItems]);
-  };
+    const existingItemIndex = arrayCarrinho.findIndex(
+      (item) => item.name === name
+    );
 
-  const notify = () =>
+    if (existingItemIndex !== -1) {
+      const newArrayCarrinho = [...arrayCarrinho];
+      newArrayCarrinho[existingItemIndex] = {
+        ...newArrayCarrinho[existingItemIndex],
+        quantity: newArrayCarrinho[existingItemIndex].quantity + countItem,
+      };
+      setArrayCarrinho(newArrayCarrinho);
+    } else {
+      setArrayCarrinho([
+        ...arrayCarrinho,
+        {
+          photo,
+          name,
+          category,
+          price,
+          description,
+          portion,
+          quantity: countItem,
+        },
+      ]);
+    }
+
+    // lib da progress bar
     toast.success("Produto adicionado com sucesso", {
       position: "top-right",
       autoClose: 4000,
@@ -60,13 +75,14 @@ const ProductPage = ({
       theme: "light",
       transition: Bounce,
     });
+  };
 
   console.log(arrayCarrinho);
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4">
       <div className="flex-shrink-0 w-full h-[408px] bg-redPrimary rounded-b-[200px]">
-        <div className="max-w-[393px] mx-auto py-9 px-[33px]">
+        <div className="mx-auto py-9 px-[33px]">
           <div>
             <button
               className="w-12 h-12 flex justify-center items-center bg-white rounded-full"
@@ -87,7 +103,6 @@ const ProductPage = ({
               {name}
             </p>
             <p className="text-xl font-bold text-redPrimary">
-              {" "}
               R$ {price.toFixed(2).replace(".", ",")}
             </p>
           </div>
@@ -129,7 +144,7 @@ const ProductPage = ({
             </div>
             <button
               className="w-[167px] h-[61px] flex items-center justify-center bg-redPrimary rounded-[30px]"
-              onClick={notify}
+              onClick={handleAddToCart}
             >
               <p className="text-white text-xs font-semibold">
                 Adicionar ao carrinho
