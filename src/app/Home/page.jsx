@@ -3,7 +3,7 @@
 import Header from "@/components/Home/Header";
 import Buttons from "@/components/Home/Buttons";
 import CardsProducts from "@/components/Home/CardsProducts";
-import ProductPage from "@/components/ProductPage";
+import ProductPage from "@/components/pageProduct/ProductPage";
 import Menu from "@/components/Home/Menu";
 import { useFetch } from "@/hooks/useFetch";
 import { useFetchBest } from "@/hooks/useFetchBest";
