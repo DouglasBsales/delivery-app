@@ -3,7 +3,14 @@ import pedidoNaorealizado from "../../assets/PedidoNaoRealizado.png";
 import Image from "next/image";
 import PageCarrinhoAdd from "./pageCarrinhoAdd";
 
-const CarrinhoPage = ({ home, pageCarrinho, arrayCarrinho }) => {
+const CarrinhoPage = ({
+  home,
+  pageCarrinho,
+  arrayCarrinho,
+  setArrayCarrinho,
+  arrayPedidos,
+  setArrayPedidos,
+}) => {
   const pageHome = () => {
     pageCarrinho(false);
     home(true);
@@ -41,7 +48,13 @@ const CarrinhoPage = ({ home, pageCarrinho, arrayCarrinho }) => {
         )}
 
         {arrayCarrinho.length >= 1 && (
-          <PageCarrinhoAdd arrayCarrinho={arrayCarrinho} pageHome={pageHome} />
+          <PageCarrinhoAdd
+            arrayCarrinho={arrayCarrinho}
+            pageHome={pageHome}
+            setArrayCarrinho={setArrayCarrinho}
+            arrayPedidos={arrayPedidos}
+            setArrayPedidos={setArrayPedidos}
+          />
         )}
       </div>
     </div>
