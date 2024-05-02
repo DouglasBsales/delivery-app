@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { Heart } from "lucide-react";
-import ProductPage from "../ProductPage";
 
 const CardsProducts = ({
   name,
@@ -13,10 +11,7 @@ const CardsProducts = ({
   price,
   descriptionCard,
   id,
-  setIsHome,
-  setIsPageProduct,
-  items,
-  clickPageProduct
+  clickPageProduct,
 }) => {
 
   return (
