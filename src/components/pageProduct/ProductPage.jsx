@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 const ProductPage = ({
   setIsHome,
   setIsPageProduct,
+  setFilteredItems,
+  handleClickFilterTodos,
   photo,
   name,
   category,
@@ -20,6 +22,8 @@ const ProductPage = ({
   const returnPageHome = () => {
     setIsHome(true);
     setIsPageProduct(false);
+    handleClickFilterTodos(true)
+    setFilteredItems([]);
   };
 
   const [countItem, setCountItem] = useState(1);
