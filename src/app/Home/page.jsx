@@ -35,10 +35,15 @@ export default function Home() {
   const [isPageCarrinho, setIsPageCarrinho] = useState(false);
 
   const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
+  const [arrayPedidos, setArraypedidos] = useState([]);
 
   const handleClickFilterItem = () => {
     if (value.trim() === "") {
       alert("Insira um item, por favor");
+      return;
+    }
+
+    if (!items) {
       return;
     }
 
@@ -88,6 +93,8 @@ export default function Home() {
     setIsHome(false);
     setIsPageProduct(true);
     setProductExib(selected);
+    setFilteredItems(selected);
+    setValue("");
   };
 
   return (
@@ -232,19 +239,20 @@ export default function Home() {
               </div>
             )}
 
-            {filteredItems.map((product) => (
-              <div key={product.id}>
-                <CardsProducts
-                  name={product.name}
-                  category={product.category}
-                  photo={product.photo}
-                  price={product.price}
-                  portion={product.portion}
-                  descriptionCard={product.descriptionCard}
-                  clickPageProduct={clickPageProduct}
-                />
-              </div>
-            ))}
+            {filteredItems &&
+              filteredItems.map((product) => (
+                <div key={product.id}>
+                  <CardsProducts
+                    id={product.id}
+                    name={product.name}
+                    category={product.category}
+                    photo={product.photo}
+                    price={product.price}
+                    descriptionCard={product.descriptionCard}
+                    clickPageProduct={clickPageProduct}
+                  />
+                </div>
+              ))}
           </div>
           <Menu home={setIsHome} pageCarrinho={setIsPageCarrinho} />
         </div>
@@ -254,6 +262,7 @@ export default function Home() {
         <ProductPage
           setIsHome={setIsHome}
           setIsPageProduct={setIsPageProduct}
+          setFilteredItems={setFilteredItems}
           photo={productExib.photo}
           name={productExib.name}
           category={productExib.category}
@@ -262,6 +271,7 @@ export default function Home() {
           portion={productExib.portion}
           arrayCarrinho={arrayProductCarrinho}
           setArrayCarrinho={setArrayProductCarrinho}
+          handleClickFilterTodos={handleClickFilterTodos}
         />
       )}
 
@@ -270,6 +280,9 @@ export default function Home() {
           home={setIsHome}
           pageCarrinho={setIsPageCarrinho}
           arrayCarrinho={arrayProductCarrinho}
+          setArrayCarrinho={setArrayProductCarrinho}
+          arrayPedidos={arrayPedidos}
+          setArrayPedidos={setArraypedidos}
         />
       )}
     </div>
