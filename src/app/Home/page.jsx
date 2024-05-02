@@ -34,8 +34,7 @@ export default function Home() {
 
   const [isPageCarrinho, setIsPageCarrinho] = useState(false);
 
-
-  const [arrayProductCarrinho, setArrayProductCarrinho] = useState([])
+  const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
 
   const handleClickFilterItem = () => {
     if (value.trim() === "") {
@@ -227,7 +226,6 @@ export default function Home() {
                           price={product.price}
                           descriptionCard={product.descriptionCard}
                           clickPageProduct={clickPageProduct}
-                          
                         />
                       </div>
                     ))}
@@ -262,13 +260,17 @@ export default function Home() {
           price={productExib.price}
           description={productExib.description}
           portion={productExib.portion}
-          arrayCarrinho ={arrayProductCarrinho}
+          arrayCarrinho={arrayProductCarrinho}
           setArrayCarrinho={setArrayProductCarrinho}
         />
       )}
 
       {isPageCarrinho && (
-        <CarrinhoPage home={setIsHome} pageCarrinho={setIsPageCarrinho} />
+        <CarrinhoPage
+          home={setIsHome}
+          pageCarrinho={setIsPageCarrinho}
+          arrayCarrinho={arrayProductCarrinho}
+        />
       )}
     </div>
   );
