@@ -10,6 +10,7 @@ import { useFetchBest } from "@/hooks/useFetchBest";
 import { useState } from "react";
 
 import { Search, SlidersHorizontal } from "lucide-react";
+import CarrinhoPage from "@/components/Carrinho/CarrinhoPage";
 
 const url = "https://josn-delivery-app.vercel.app/products";
 const urlBest = "https://josn-delivery-app.vercel.app/BestProducts";
@@ -30,6 +31,11 @@ export default function Home() {
   const [isHome, setIsHome] = useState(true);
   const [isPageProduct, setIsPageProduct] = useState(false);
   const [productExib, setProductExib] = useState(null);
+
+  const [isPageCarrinho, setIsPageCarrinho] = useState(false);
+
+
+  const [arrayProductCarrinho, setArrayProductCarrinho] = useState([])
 
   const handleClickFilterItem = () => {
     if (value.trim() === "") {
@@ -142,9 +148,6 @@ export default function Home() {
                         photo={product.photo}
                         price={product.price}
                         descriptionCard={product.descriptionCard}
-                        setIsHome={setIsHome}
-                        setIsPageProduct={setIsPageProduct}
-                        items={items}
                         clickPageProduct={clickPageProduct}
                       />
                     </div>
@@ -171,9 +174,6 @@ export default function Home() {
                           photo={product.photo}
                           price={product.price}
                           descriptionCard={product.descriptionCard}
-                          setIsHome={setIsHome}
-                          setIsPageProduct={setIsPageProduct}
-                          items={items}
                           clickPageProduct={clickPageProduct}
                         />
                       </div>
@@ -200,9 +200,6 @@ export default function Home() {
                           photo={product.photo}
                           price={product.price}
                           descriptionCard={product.descriptionCard}
-                          setIsHome={setIsHome}
-                          setIsPageProduct={setIsPageProduct}
-                          items={items}
                           clickPageProduct={clickPageProduct}
                         />
                       </div>
@@ -229,10 +226,8 @@ export default function Home() {
                           photo={product.photo}
                           price={product.price}
                           descriptionCard={product.descriptionCard}
-                          setIsHome={setIsHome}
-                          setIsPageProduct={setIsPageProduct}
-                          items={items}
                           clickPageProduct={clickPageProduct}
+                          
                         />
                       </div>
                     ))}
@@ -248,15 +243,12 @@ export default function Home() {
                   price={product.price}
                   portion={product.portion}
                   descriptionCard={product.descriptionCard}
-                  setIsHome={setIsHome}
-                  setIsPageProduct={setIsPageProduct}
-                  items={items}
                   clickPageProduct={clickPageProduct}
                 />
               </div>
             ))}
           </div>
-          <Menu />
+          <Menu home={setIsHome} pageCarrinho={setIsPageCarrinho} />
         </div>
       )}
 
@@ -270,7 +262,13 @@ export default function Home() {
           price={productExib.price}
           description={productExib.description}
           portion={productExib.portion}
+          arrayCarrinho ={arrayProductCarrinho}
+          setArrayCarrinho={setArrayProductCarrinho}
         />
+      )}
+
+      {isPageCarrinho && (
+        <CarrinhoPage home={setIsHome} pageCarrinho={setIsPageCarrinho} />
       )}
     </div>
   );
