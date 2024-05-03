@@ -10,6 +10,10 @@ const CarrinhoPage = ({
   setArrayCarrinho,
   arrayPedidos,
   setArrayPedidos,
+  arrayPedidosRealizados,
+  setArrayPedidosRealizados,
+  setIsPageCarrinho,
+  setIsPagePedido
 }) => {
   const pageHome = () => {
     pageCarrinho(false);
@@ -54,6 +58,11 @@ const CarrinhoPage = ({
             setArrayCarrinho={setArrayCarrinho}
             arrayPedidos={arrayPedidos}
             setArrayPedidos={setArrayPedidos}
+            arrayPedidosRealizados={ arrayPedidosRealizados}
+            setArrayPedidosRealizados={setArrayPedidosRealizados}
+            setIsPageCarrinho={setIsPageCarrinho}
+            setIsPagePedido={setIsPagePedido}
+
           />
         )}
       </div>
