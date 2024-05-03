@@ -1,33 +1,29 @@
+"use client";
+
+import { useState } from "react";
 import ListaCarrinho from "./ListaCarrinho";
-import { ToastContainer, toast } from "react-toastify";
-import { Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ModalPedidoRealizado from "./ModalPedidoRealizado";
 
 const PageCarrinhoAdd = ({
   arrayCarrinho,
   pageHome,
   setArrayCarrinho,
-  arrayPedidos,
   setArrayPedidos,
+  arrayPedidosRealizados,
+  setArrayPedidosRealizados,
+  setIsPageCarrinho,
+  setIsPagePedido,
 }) => {
+  const [modalPedido, setModalPedido] = useState(false);
+
   const handleClickAddPedido = () => {
-    setArrayPedidos([arrayCarrinho]);
+    setArrayPedidos([...arrayPedidosRealizados, arrayCarrinho]);
+    setArrayPedidosRealizados([...arrayPedidosRealizados, arrayCarrinho]);
 
-    // lib para progress bar
-    toast.success("Pedido realizado!", {
-      position: "top-right",
-      autoClose: 4000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
+    //abertura do modal após pedido realizado
+    setModalPedido(true);
   };
-
-  console.log(arrayPedidos);
 
   return (
     <div className="pb-[50px]">
@@ -79,19 +75,14 @@ const PageCarrinhoAdd = ({
         >
           <p className="text-white font-semibold text-xl">Realizar pedido</p>
         </button>
-        <ToastContainer
-          position="top-right"
-          autoClose={120}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          transition={Bounce}
-        />
+        {modalPedido && (
+          <ModalPedidoRealizado
+            modalPedido={setModalPedido}
+            setIsPageCarrinho={setIsPageCarrinho}
+            setIsPagePedido={setIsPagePedido}
+            setArrayCarrinho={setArrayCarrinho}
+          />
+        )}
       </div>
     </div>
   );
