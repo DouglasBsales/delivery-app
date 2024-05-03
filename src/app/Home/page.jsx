@@ -1,16 +1,24 @@
 "use client";
 
-import Header from "@/components/Home/Header";
-import Buttons from "@/components/Home/Buttons";
-import CardsProducts from "@/components/Home/CardsProducts";
-import ProductPage from "@/components/pageProduct/ProductPage";
-import Menu from "@/components/Home/Menu";
+import { Search, SlidersHorizontal } from "lucide-react";
+
 import { useFetch } from "@/hooks/useFetch";
 import { useFetchBest } from "@/hooks/useFetchBest";
 import { useState } from "react";
 
-import { Search, SlidersHorizontal } from "lucide-react";
+import Header from "@/components/Home/Header";
+import Buttons from "@/components/Home/Buttons";
+import Menu from "@/components/Home/Menu";
+
+import MaisProcurados from "@/components/pagePrincipal/MaisProcurados";
+import FilterBurguer from "@/components/pagePrincipal/FilterBurguer";
+import FilterPizza from "@/components/pagePrincipal/FilterPizza";
+import FilterBatata from "@/components/pagePrincipal/FilterBatata";
+import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
+
 import CarrinhoPage from "@/components/Carrinho/CarrinhoPage";
+import ProductPage from "@/components/pageProduct/ProductPage";
+import PagePedidos from "@/components/PagePedidos/PagePedidos";
 
 const url = "https://josn-delivery-app.vercel.app/products";
 const urlBest = "https://josn-delivery-app.vercel.app/BestProducts";
@@ -33,6 +41,8 @@ export default function Home() {
   const [productExib, setProductExib] = useState(null);
 
   const [isPageCarrinho, setIsPageCarrinho] = useState(false);
+  const [isPagePedido, setIsPagePedido] = useState(false);
+  const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
   const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
   const [arrayPedidos, setArraypedidos] = useState([]);
@@ -138,123 +148,39 @@ export default function Home() {
             />
 
             {maisProcurados && (
-              <div>
-                <div className="pt-[36px]">
-                  <p className="font-semibold text-[18px] text-blackPrimary">
-                    Mais procurados
-                  </p>
-                </div>
-                {itemsBest &&
-                  itemsBest.map((product) => (
-                    <div key={product.id}>
-                      <CardsProducts
-                        id={product.id}
-                        name={product.name}
-                        category={product.category}
-                        photo={product.photo}
-                        price={product.price}
-                        descriptionCard={product.descriptionCard}
-                        clickPageProduct={clickPageProduct}
-                      />
-                    </div>
-                  ))}
-              </div>
+              <MaisProcurados
+                itemsBest={itemsBest}
+                clickPageProduct={clickPageProduct}
+              />
             )}
 
             {burguer && (
-              <div>
-                <div>
-                  <p className="font-semibold text-[18px] text-blackPrimary pt-8">
-                    Burguer
-                  </p>
-                </div>
-                {items &&
-                  items
-                    .filter((product) => product.category === "Burguer")
-                    .map((product) => (
-                      <div key={product.id}>
-                        <CardsProducts
-                          id={product.id}
-                          name={product.name}
-                          category={product.category}
-                          photo={product.photo}
-                          price={product.price}
-                          descriptionCard={product.descriptionCard}
-                          clickPageProduct={clickPageProduct}
-                        />
-                      </div>
-                    ))}
-              </div>
+              <FilterBurguer
+                items={items}
+                clickPageProduct={clickPageProduct}
+              />
             )}
 
             {pizza && (
-              <div>
-                <div>
-                  <p className="font-semibold text-[18px] text-blackPrimary pt-8">
-                    Pizza
-                  </p>
-                </div>
-                {items &&
-                  items
-                    .filter((products) => products.category === "Pizza")
-                    .map((product) => (
-                      <div key={product.id}>
-                        <CardsProducts
-                          id={product.id}
-                          name={product.name}
-                          category={product.category}
-                          photo={product.photo}
-                          price={product.price}
-                          descriptionCard={product.descriptionCard}
-                          clickPageProduct={clickPageProduct}
-                        />
-                      </div>
-                    ))}
-              </div>
+              <FilterPizza items={items} clickPageProduct={clickPageProduct} />
             )}
 
             {batata && (
-              <div>
-                <div>
-                  <p className="font-semibold text-[18px] text-blackPrimary pt-8">
-                    Batata frita
-                  </p>
-                </div>
-                {items &&
-                  items
-                    .filter((product) => product.category === "batata")
-                    .map((product) => (
-                      <div key={product.id}>
-                        <CardsProducts
-                          id={product.id}
-                          name={product.name}
-                          category={product.category}
-                          photo={product.photo}
-                          price={product.price}
-                          descriptionCard={product.descriptionCard}
-                          clickPageProduct={clickPageProduct}
-                        />
-                      </div>
-                    ))}
-              </div>
+              <FilterBatata items={items} clickPageProduct={clickPageProduct} />
             )}
 
-            {filteredItems &&
-              filteredItems.map((product) => (
-                <div key={product.id}>
-                  <CardsProducts
-                    id={product.id}
-                    name={product.name}
-                    category={product.category}
-                    photo={product.photo}
-                    price={product.price}
-                    descriptionCard={product.descriptionCard}
-                    clickPageProduct={clickPageProduct}
-                  />
-                </div>
-              ))}
+            {filteredItems && (
+              <FilterItemsValue
+                filteredItems={filteredItems}
+                clickPageProduct={clickPageProduct}
+              />
+            )}
           </div>
-          <Menu home={setIsHome} pageCarrinho={setIsPageCarrinho} />
+          <Menu
+            home={setIsHome}
+            pageCarrinho={setIsPageCarrinho}
+            pagePedido={setIsPagePedido}
+          />
         </div>
       )}
 
@@ -283,6 +209,18 @@ export default function Home() {
           setArrayCarrinho={setArrayProductCarrinho}
           arrayPedidos={arrayPedidos}
           setArrayPedidos={setArraypedidos}
+          arrayPedidosRealizados={arrayPedidosRealizados}
+          setArrayPedidosRealizados={setArrayPedidosRealizados}
+          setIsPageCarrinho={setIsPageCarrinho}
+          setIsPagePedido={setIsPagePedido}
+        />
+      )}
+
+      {isPagePedido && (
+        <PagePedidos
+          home={setIsHome}
+          pagePedido={setIsPagePedido}
+          pedidosRealizados={arrayPedidosRealizados}
         />
       )}
     </div>
