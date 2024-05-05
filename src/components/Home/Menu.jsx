@@ -17,7 +17,6 @@ const Menu = ({ home, pageCarrinho, pagePedido, arrayProductCarrinho }) => {
     home(false);
   };
 
-  console.log(arrayProductCarrinho);
 
   return (
     <div className="fixed bottom-0">
