@@ -14,6 +14,7 @@ import MaisProcurados from "@/components/pagePrincipal/MaisProcurados";
 import FilterBurguer from "@/components/pagePrincipal/FilterBurguer";
 import FilterPizza from "@/components/pagePrincipal/FilterPizza";
 import FilterBatata from "@/components/pagePrincipal/FilterBatata";
+import FilterRefrigerante from "@/components/pagePrincipal/FilterRefrigerante";
 import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
 
 import CarrinhoPage from "@/components/Carrinho/CarrinhoPage";
@@ -31,6 +32,7 @@ export default function Home() {
   const [burguer, setBurguer] = useState(true);
   const [pizza, setPizza] = useState(true);
   const [batata, setBatata] = useState(true);
+  const [refrigerante, setRefrigerante] = useState(true);
   const [isSelectd, setIsSelected] = useState("Todos");
   const [filteredItems, setFilteredItems] = useState([]);
 
@@ -61,6 +63,7 @@ export default function Home() {
     setBurguer(false);
     setPizza(false);
     setBatata(false);
+    setRefrigerante(false);
     const filteredItems = items.filter((product) =>
       product.name.toLowerCase().includes(value.toLowerCase())
     );
@@ -73,6 +76,7 @@ export default function Home() {
     setBurguer(true);
     setPizza(true);
     setBatata(true);
+    setRefrigerante(true);
     setIsSelected("Todos");
     setValue("");
     setFilteredItems([]);
@@ -82,6 +86,7 @@ export default function Home() {
     setMaisProcurados(false);
     setPizza(false);
     setBatata(false);
+    setRefrigerante(false);
     setBurguer(true);
     setIsSelected("Burguer");
     setValue("");
@@ -92,8 +97,20 @@ export default function Home() {
     setMaisProcurados(false);
     setBurguer(false);
     setBatata(false);
+    setRefrigerante(false);
     setPizza(true);
     setIsSelected("Pizza");
+    setValue("");
+    setFilteredItems([]);
+  };
+
+  const handleClickFilterRefri = () => {
+    setMaisProcurados(false);
+    setBurguer(false);
+    setBatata(false);
+    setPizza(false);
+    setRefrigerante(true);
+    setIsSelected("Refrigerante");
     setValue("");
     setFilteredItems([]);
   };
@@ -144,6 +161,7 @@ export default function Home() {
               filterPizza={handleClickFilterPizza}
               filterTodos={handleClickFilterTodos}
               filterBurguer={handleClickFilterBurguer}
+              filterRefri={handleClickFilterRefri}
               isSelected={isSelectd}
             />
 
@@ -169,6 +187,13 @@ export default function Home() {
               <FilterBatata items={items} clickPageProduct={clickPageProduct} />
             )}
 
+            {refrigerante && (
+              <FilterRefrigerante
+                items={items}
+                clickPageProduct={clickPageProduct}
+              />
+            )}
+
             {filteredItems && (
               <FilterItemsValue
                 filteredItems={filteredItems}
@@ -180,6 +205,7 @@ export default function Home() {
             home={setIsHome}
             pageCarrinho={setIsPageCarrinho}
             pagePedido={setIsPagePedido}
+            arrayProductCarrinho={arrayProductCarrinho}
           />
         </div>
       )}
