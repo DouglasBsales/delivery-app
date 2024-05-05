@@ -81,8 +81,6 @@ const ProductPage = ({
     });
   };
 
-  console.log(arrayCarrinho);
-
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4">
       <div className="flex-shrink-0 w-full h-[408px] bg-redPrimary rounded-b-[200px]">
