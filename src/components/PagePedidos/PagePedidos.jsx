@@ -26,7 +26,7 @@ const PagePedidos = ({ home, pagePedido, pedidosRealizados }) => {
           </div>
         </div>
       </div>
-      <div className="flex-1 max-w-[393px] mx-auto px-[33px]">
+      <div className="max-w-[393px] px-[33px]">
         {pedidosRealizados.length === 0 ? (
           <PedidoVazio />
         ) : (
