@@ -16,6 +16,7 @@ const ProductPage = ({
   price,
   description,
   portion,
+  ml,
   arrayCarrinho,
   setArrayCarrinho,
 }) => {
@@ -110,6 +111,9 @@ const ProductPage = ({
           </div>
           <div>
             <p className="text-redPrimary font-semibold">{portion}</p>
+          </div>
+          <div>
+          <p className="text-redPrimary font-semibold">{ml}</p>
           </div>
           <div>
             <p className="text-xs font-semibold text-blackOpacity">
