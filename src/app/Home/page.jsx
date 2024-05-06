@@ -50,6 +50,7 @@ export default function Home() {
 
   const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
   const [arrayPedidos, setArraypedidos] = useState([]);
+  const [valuePayment, setValuePayment] = useState("0");
 
   const handleClickFilterItem = () => {
     if (value.trim() === "") {
@@ -248,6 +249,7 @@ export default function Home() {
           arrayCarrinho={arrayProductCarrinho}
           setArrayCarrinho={setArrayProductCarrinho}
           handleClickFilterTodos={handleClickFilterTodos}
+          valuePayment={valuePayment}
         />
       )}
 
@@ -263,6 +265,8 @@ export default function Home() {
           setArrayPedidosRealizados={setArrayPedidosRealizados}
           setIsPageCarrinho={setIsPageCarrinho}
           setIsPagePedido={setIsPagePedido}
+          valuePayment={valuePayment}
+          setValuePayment={setValuePayment}
         />
       )}
 
