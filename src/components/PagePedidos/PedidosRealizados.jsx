@@ -14,7 +14,7 @@ const PedidosRealizados = ({ pedidosRealizados }) => {
         <div>
           {pedidosRealizados.map((order, index) => (
             <div
-              key={index}
+              key={order.id}
               className="w-[320px] bg-white rounded-lg mb-5 px-4"
             >
               <div className="pb-[26px]">
@@ -43,7 +43,7 @@ const PedidosRealizados = ({ pedidosRealizados }) => {
                       <div className="w-full flex justify-between">
                         <div className="flex gap-1 text-blackOpacity">
                           <p>{product.quantity}x</p>
-                          <p>{product.name}</p>
+                          <p className="">{product.name}</p>
                         </div>
                         <div>
                           <p className="font-semibold text-redPrimary">
