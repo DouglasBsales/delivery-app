@@ -15,6 +15,7 @@ import FilterBurguer from "@/components/pagePrincipal/FilterBurguer";
 import FilterPizza from "@/components/pagePrincipal/FilterPizza";
 import FilterBatata from "@/components/pagePrincipal/FilterBatata";
 import FilterRefrigerante from "@/components/pagePrincipal/FilterRefrigerante";
+import FilterAgua from "@/components/pagePrincipal/FilterAgua";
 import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
 
 import CarrinhoPage from "@/components/Carrinho/CarrinhoPage";
@@ -33,6 +34,7 @@ export default function Home() {
   const [pizza, setPizza] = useState(true);
   const [batata, setBatata] = useState(true);
   const [refrigerante, setRefrigerante] = useState(true);
+  const [agua, setAgua] = useState(true);
   const [isSelectd, setIsSelected] = useState("Todos");
   const [filteredItems, setFilteredItems] = useState([]);
 
@@ -77,6 +79,7 @@ export default function Home() {
     setPizza(true);
     setBatata(true);
     setRefrigerante(true);
+    setAgua(true)
     setIsSelected("Todos");
     setValue("");
     setFilteredItems([]);
@@ -88,6 +91,7 @@ export default function Home() {
     setBatata(false);
     setRefrigerante(false);
     setBurguer(true);
+    setAgua(false)
     setIsSelected("Burguer");
     setValue("");
     setFilteredItems([]);
@@ -99,6 +103,7 @@ export default function Home() {
     setBatata(false);
     setRefrigerante(false);
     setPizza(true);
+    setAgua(false)
     setIsSelected("Pizza");
     setValue("");
     setFilteredItems([]);
@@ -109,11 +114,24 @@ export default function Home() {
     setBurguer(false);
     setBatata(false);
     setPizza(false);
+    setAgua(false)
     setRefrigerante(true);
     setIsSelected("Refrigerante");
     setValue("");
     setFilteredItems([]);
   };
+
+  const handleClickFilterAgua = ()=>{
+    setMaisProcurados(false);
+    setBurguer(false);
+    setBatata(false);
+    setPizza(false);
+    setRefrigerante(false);
+    setAgua(true)
+    setIsSelected("agua");
+    setValue("");
+    setFilteredItems([]);
+  }
 
   const clickPageProduct = (id) => {
     const selected = items.find((product) => product.id === id);
@@ -162,6 +180,7 @@ export default function Home() {
               filterTodos={handleClickFilterTodos}
               filterBurguer={handleClickFilterBurguer}
               filterRefri={handleClickFilterRefri}
+              filterAgua={handleClickFilterAgua}
               isSelected={isSelectd}
             />
 
@@ -192,6 +211,10 @@ export default function Home() {
                 items={items}
                 clickPageProduct={clickPageProduct}
               />
+            )}
+
+            {agua && (
+              <FilterAgua items={items} clickPageProduct={clickPageProduct} />
             )}
 
             {filteredItems && (
