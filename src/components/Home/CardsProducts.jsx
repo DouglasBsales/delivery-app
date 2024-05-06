@@ -6,6 +6,7 @@ import { Heart } from "lucide-react";
 const CardsProducts = ({
   name,
   portion,
+  ml,
   category,
   photo,
   price,
@@ -33,8 +34,11 @@ const CardsProducts = ({
             <p className="text-[18px] text-blackPrimary font-semibold relative top-[-3px]">
               {name}
             </p>
-            <p className="text-redPrimary text-xs relative bottom-2">
+            <p className="text-redPrimary text-xs font-semibold relative bottom-2">
               {portion}
+            </p>
+            <p className="text-redPrimary text-xs font-semibold relative bottom-2">
+              {ml}
             </p>
             <p className="text-[10px] font-semibold text-blackOpacity">
               {descriptionCard}...
