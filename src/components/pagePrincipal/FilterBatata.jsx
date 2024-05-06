@@ -20,6 +20,7 @@ const FilterBatata = ({ items, clickPageProduct }) => {
                 category={product.category}
                 photo={product.photo}
                 price={product.price}
+                portion={product.portion}
                 descriptionCard={product.descriptionCard}
                 clickPageProduct={clickPageProduct}
               />
