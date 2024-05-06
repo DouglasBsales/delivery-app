@@ -244,6 +244,7 @@ export default function Home() {
           price={productExib.price}
           description={productExib.description}
           portion={productExib.portion}
+          ml={productExib.ml}
           arrayCarrinho={arrayProductCarrinho}
           setArrayCarrinho={setArrayProductCarrinho}
           handleClickFilterTodos={handleClickFilterTodos}
