@@ -2,8 +2,6 @@ import Image from "next/image";
 import React from "react";
 
 const PedidosRealizados = ({ pedidosRealizados }) => {
-  console.log(pedidosRealizados);
-
   const calcularTotalPedido = (pedido) => {
     return pedido.reduce((total, product) => {
       return total + product.quantity * product.price;
