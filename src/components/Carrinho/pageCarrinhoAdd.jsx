@@ -14,12 +14,30 @@ const PageCarrinhoAdd = ({
   setArrayPedidosRealizados,
   setIsPageCarrinho,
   setIsPagePedido,
+  valuePayment,
+  setValuePayment,
 }) => {
   const [modalPedido, setModalPedido] = useState(false);
+  const [pagamentoTrue, setPagamentotrue] = useState(false);
 
   const handleClickAddPedido = () => {
-    setArrayPedidos([...arrayPedidosRealizados, arrayCarrinho]);
-    setArrayPedidosRealizados([...arrayPedidosRealizados, arrayCarrinho]);
+    if (valuePayment === "0") {
+      setPagamentotrue(true);
+      alert("Selecione uma forma de pagamento");
+      return;
+    }
+
+    // Adiciona o valor de pagamento ao objeto do carrinho antes de adicionar ao array de pedidos
+    const carrinhoComPagamento = arrayCarrinho.map((item) => ({
+      ...item,
+      payment: valuePayment,
+    }));
+
+    setArrayPedidos([...arrayPedidosRealizados, carrinhoComPagamento]);
+    setArrayPedidosRealizados([
+      ...arrayPedidosRealizados,
+      carrinhoComPagamento,
+    ]);
 
     //abertura do modal após pedido realizado
     setModalPedido(true);
@@ -39,6 +57,7 @@ const PageCarrinhoAdd = ({
               item={item}
               arrayCarrinho={arrayCarrinho}
               setArrayCarrinho={setArrayCarrinho}
+              valuePayment={valuePayment}
             />
           </div>
         ))}
@@ -49,6 +68,30 @@ const PageCarrinhoAdd = ({
             Adicionar mais itens
           </p>
         </button>
+      </div>
+      <div className="flex flex-col itens-center pt-5">
+        <div>
+          <p
+            className={`text-center font-semibold ${
+              pagamentoTrue ? "text-redPrimary" : "text-blackPrimary"
+            }`}
+          >
+            Pagamento:
+          </p>
+        </div>
+        <div>
+          <select
+            className="bg-transparent outline-none"
+            value={valuePayment}
+            onChange={(e) => setValuePayment(e.target.value)}
+          >
+            <option value="0">Selecione uma opção de pagamento</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Pix">Pix</option>
+            <option value="Crédito">Cartão de crédito</option>
+            <option value="Débito">Cartão de débito</option>
+          </select>
+        </div>
       </div>
       <div className="flex justify-between pt-[46px]">
         <div>
