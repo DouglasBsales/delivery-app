@@ -16,6 +16,8 @@ const MaisProcurados = ({ itemsBest, clickPageProduct }) => {
               id={product.id}
               name={product.name}
               category={product.category}
+              portion={product.portion}
+              ml={product.ml}
               photo={product.photo}
               price={product.price}
               descriptionCard={product.descriptionCard}
