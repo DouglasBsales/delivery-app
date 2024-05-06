@@ -5,6 +5,7 @@ const Buttons = ({
   filterPizza,
   filterTodos,
   filterBurguer,
+  filterBatata,
   filterRefri,
   filterAgua,
   isSelected,
@@ -48,6 +49,19 @@ const Buttons = ({
           <p className="font-semibold text-[14px]">Pizza</p>
         </button>
       </div>
+      <div>
+        <button
+          className={`px-6 py-2  rounded-[30px] outline-none ${
+            isSelected === "batata"
+              ? "bg-redPrimary text-white "
+              : "bg-white text-blackPrimary "
+          }`}
+          onClick={filterBatata}
+        >
+          <p className="font-semibold text-[14px]">Batata</p>
+        </button>
+      </div>
+
       <div>
         <button
           className={`px-6 py-2 rounded-[30px] outline-none ${

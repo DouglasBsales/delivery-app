@@ -80,7 +80,7 @@ export default function Home() {
     setPizza(true);
     setBatata(true);
     setRefrigerante(true);
-    setAgua(true)
+    setAgua(true);
     setIsSelected("Todos");
     setValue("");
     setFilteredItems([]);
@@ -91,9 +91,23 @@ export default function Home() {
     setPizza(false);
     setBatata(false);
     setRefrigerante(false);
+    setBatata(false);
     setBurguer(true);
-    setAgua(false)
+    setAgua(false);
     setIsSelected("Burguer");
+    setValue("");
+    setFilteredItems([]);
+  };
+
+  const handleClickFilterBatata = () => {
+    setMaisProcurados(false);
+    setPizza(false);
+    setBatata(false);
+    setRefrigerante(false);
+    setAgua(false);
+    setBurguer(false);
+    setBatata(true);
+    setIsSelected("batata");
     setValue("");
     setFilteredItems([]);
   };
@@ -103,8 +117,9 @@ export default function Home() {
     setBurguer(false);
     setBatata(false);
     setRefrigerante(false);
+    setBatata(false);
     setPizza(true);
-    setAgua(false)
+    setAgua(false);
     setIsSelected("Pizza");
     setValue("");
     setFilteredItems([]);
@@ -115,24 +130,26 @@ export default function Home() {
     setBurguer(false);
     setBatata(false);
     setPizza(false);
-    setAgua(false)
+    setBatata(false);
+    setAgua(false);
     setRefrigerante(true);
     setIsSelected("Refrigerante");
     setValue("");
     setFilteredItems([]);
   };
 
-  const handleClickFilterAgua = ()=>{
+  const handleClickFilterAgua = () => {
     setMaisProcurados(false);
     setBurguer(false);
     setBatata(false);
     setPizza(false);
     setRefrigerante(false);
-    setAgua(true)
+    setBatata(false);
+    setAgua(true);
     setIsSelected("agua");
     setValue("");
     setFilteredItems([]);
-  }
+  };
 
   const clickPageProduct = (id) => {
     const selected = items.find((product) => product.id === id);
@@ -180,6 +197,7 @@ export default function Home() {
               filterPizza={handleClickFilterPizza}
               filterTodos={handleClickFilterTodos}
               filterBurguer={handleClickFilterBurguer}
+              filterBatata={handleClickFilterBatata}
               filterRefri={handleClickFilterRefri}
               filterAgua={handleClickFilterAgua}
               isSelected={isSelectd}
