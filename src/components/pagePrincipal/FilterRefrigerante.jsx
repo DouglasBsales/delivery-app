@@ -17,6 +17,7 @@ const FilterRefrigerante = ({ items, clickPageProduct }) => {
                 id={product.id}
                 name={product.name}
                 category={product.category}
+                ml={product.ml}
                 photo={product.photo}
                 price={product.price}
                 descriptionCard={product.descriptionCard}
