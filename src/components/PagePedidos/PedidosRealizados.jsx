@@ -58,6 +58,11 @@ const PedidosRealizados = ({ pedidosRealizados }) => {
                   </div>
                 </div>
               ))}
+
+              <div className="flex justify-between pt-5">
+                <p className="font-semibold text-blackOpacity">Forma de pagamento:</p>
+                <p>{order[0].payment}</p>
+              </div>
               <div className="flex justify-between pt-4 pb-5">
                 <p className="text-lg text-blackOpacity font-semibold">Total</p>
                 <p className="text-redPrimary text-lg font-semibold">
