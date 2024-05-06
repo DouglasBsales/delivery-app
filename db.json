@@ -35,6 +35,7 @@
       "id": "364tna81nsad",
       "category": "refrigerante",
       "name": "Coca-cola",
+      "ml": "350ml",
       "photo": "https://drive.usercontent.google.com/download?id=1ByNDiBOYXG9gYiu7jdwFVtvi2bSM_13e",
       "price": 6,
       "description": "A Coca-Cola é a bebida gaseificada mais popular do mundo, conhecida por seu sabor refrescante e inconfundível. Com uma mistura secreta de ingredientes, oferece uma experiência única a cada gole, perfeita para acompanhar momentos de celebração e compartilhamento.",
@@ -177,17 +178,17 @@
       "descriptionCard": " A Coca-Cola é a bebida gaseificada mais popular do mundo, conhecida por seu"
     },
     {
-      "id": "364tna81nsad",
+      "id": "364tna81nsad765",
       "category": "refrigerante",
       "name": "Coca-cola",
       "ml": "1000ml",
       "photo": "https://drive.usercontent.google.com/download?id=1XTtW87z455koJfUGNWqz8qxlrVJmLlc-",
-      "price": 8.50,
+      "price": 8.5,
       "description": "A Coca-Cola é a bebida gaseificada mais popular do mundo, conhecida por seu sabor refrescante e inconfundível. Com uma mistura secreta de ingredientes, oferece uma experiência única a cada gole, perfeita para acompanhar momentos de celebração e compartilhamento.",
       "descriptionCard": " A Coca-Cola é a bebida gaseificada mais popular do mundo, conhecida por seu"
     },
     {
-      "id": "jna761lkanmdlkhj1*&23",
+      "id": "jna761lkan625",
       "category": "refrigerante",
       "name": "Antarctica",
       "ml": "350ml",
@@ -202,7 +203,7 @@
       "name": "Antarctica",
       "ml": "1000ml",
       "photo": "https://drive.usercontent.google.com/download?id=10vO0i8VCRM5vFVJf2A5KQeF8ObMpCVJd",
-      "price": 7.50,
+      "price": 7.5,
       "description": "A refrescante bebida brasileira, feita com guaraná natural da Amazônia. Sua mistura única oferece um sabor equilibrado entre doce e levemente amargo, perfeito para momentos de descontração e energia. Experimente o sabor autêntico do Brasil em cada gole.",
       "descriptionCard": "A refrescante bebida brasileira, feita com guaraná natural da Amazônia"
     },
@@ -212,7 +213,7 @@
       "name": "Água",
       "ml": "500ml",
       "photo": "https://drive.usercontent.google.com/download?id=1mkxdUoAKNOaDVKq0KUOu8yFOqnuGIrY9",
-      "price": 2.50,
+      "price": 2.5,
       "description": "Água mineral em garrafa de 500ml: Pureza e frescor para matar sua sede a qualquer hora. Embalagem conveniente para levar onde quer que vá, garantindo hidratação rápida e revitalizante.",
       "descriptionCard": "Pureza e frescor para matar sua sede a qualquer hora."
     },
@@ -222,7 +223,7 @@
       "name": "Água",
       "ml": "1500ml",
       "photo": "https://drive.usercontent.google.com/download?id=1eBFmlYFr7nG2q7eeki5iocqW1_vnsUii",
-      "price": 5.50,
+      "price": 5.5,
       "description": "Água mineral em garrafa de 1,5l: Pureza e frescor para matar sua sede a qualquer hora. Embalagem conveniente para levar onde quer que vá, garantindo hidratação rápida e revitalizante.",
       "descriptionCard": "Pureza e frescor para matar sua sede a qualquer hora."
     }
