@@ -27,7 +27,7 @@ const Menu = ({ home, pageCarrinho, pagePedido, arrayProductCarrinho }) => {
         <div className="flex flex-col relative">
           <button onClick={pageCarrinhoProduct}>
           <div className="absolute top-[-12px] left-5 ">
-            <p className="font-bold text-white text-xs">
+            <p className=" text-white text-xs">
               {arrayProductCarrinho.reduce(
                 (total, produto) => total + produto.quantity,
                 0
