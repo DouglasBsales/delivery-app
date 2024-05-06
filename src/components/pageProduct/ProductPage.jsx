@@ -17,13 +17,14 @@ const ProductPage = ({
   description,
   portion,
   ml,
+  valuePayment,
   arrayCarrinho,
   setArrayCarrinho,
 }) => {
   const returnPageHome = () => {
     setIsHome(true);
     setIsPageProduct(false);
-    handleClickFilterTodos(true)
+    handleClickFilterTodos(true);
     setFilteredItems([]);
   };
 
@@ -54,6 +55,7 @@ const ProductPage = ({
       };
       setArrayCarrinho(newArrayCarrinho);
     } else {
+      // Adicionando a informação de pagamento ao novo objeto do carrinho
       setArrayCarrinho([
         ...arrayCarrinho,
         {
@@ -64,6 +66,7 @@ const ProductPage = ({
           description,
           portion,
           quantity: countItem,
+          payment: valuePayment,
         },
       ]);
     }
@@ -113,7 +116,7 @@ const ProductPage = ({
             <p className="text-redPrimary font-semibold">{portion}</p>
           </div>
           <div>
-          <p className="text-redPrimary font-semibold">{ml}</p>
+            <p className="text-redPrimary font-semibold">{ml}</p>
           </div>
           <div>
             <p className="text-xs font-semibold text-blackOpacity">
