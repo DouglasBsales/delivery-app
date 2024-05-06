@@ -6,10 +6,11 @@ const Buttons = ({
   filterTodos,
   filterBurguer,
   filterRefri,
+  filterAgua,
   isSelected,
 }) => {
   return (
-    <div className="w-full flex gap-[15px] pt-[18px] overflow-x-auto  container">
+    <div className="w-full flex gap-[8px] pt-[18px] overflow-x-auto container">
       <div>
         <button
           className={`px-6 py-2  rounded-[30px] outline-none ${
@@ -57,6 +58,18 @@ const Buttons = ({
           onClick={filterRefri}
         >
           <p className="font-semibold text-[14px]">Refrigerante</p>
+        </button>
+      </div>
+      <div>
+        <button
+          className={`px-6 py-2 rounded-[30px] outline-none ${
+            isSelected === "agua"
+              ? "bg-redPrimary text-white "
+              : "bg-white text-blackPrimary "
+          }`}
+          onClick={filterAgua}
+        >
+          <p className="font-semibold text-[14px]">Água</p>
         </button>
       </div>
     </div>
