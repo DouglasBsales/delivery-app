@@ -81,28 +81,28 @@ const ListaCarrinho = ({ item, arrayCarrinho, setArrayCarrinho }) => {
                 </p>
               </div>
             </div>
-            <div >
-                  <div className="w-[79px] h-[28px] bg-redPrimary rounded-md">
-                    <div className="flex justify-between p-[7px]">
-                      {countItem === 1 && (
-                        <button onClick={handleRemoveItem}>
-                          <Trash2 className="text-white" size={16} />
-                        </button>
-                      )}
-                      {countItem > 1 && (
-                        <button onClick={handleClickMinusItem}>
-                          <Minus className="text-white" size={16} />
-                        </button>
-                      )}
-                      <div className="text-xs font-semibold text-white">
-                        {countItem}
-                      </div>
-                      <button onClick={handleClickAddItem}>
-                        <Plus className="text-white" size={16} />
-                      </button>
-                    </div>
+            <div className="pl-2">
+              <div className="w-[79px] h-[28px] bg-redPrimary rounded-md">
+                <div className="flex justify-between p-[7px]">
+                  {countItem === 1 && (
+                    <button onClick={handleRemoveItem}>
+                      <Trash2 className="text-white" size={16} />
+                    </button>
+                  )}
+                  {countItem > 1 && (
+                    <button onClick={handleClickMinusItem}>
+                      <Minus className="text-white" size={16} />
+                    </button>
+                  )}
+                  <div className="text-xs font-semibold text-white">
+                    {countItem}
                   </div>
+                  <button onClick={handleClickAddItem}>
+                    <Plus className="text-white" size={16} />
+                  </button>
                 </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
