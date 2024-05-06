@@ -2,7 +2,12 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 
-const ListaCarrinho = ({ item, arrayCarrinho, setArrayCarrinho }) => {
+const ListaCarrinho = ({
+  item,
+  arrayCarrinho,
+  setArrayCarrinho,
+  valuePayment,
+}) => {
   const [countItem, setCountItem] = useState(item.quantity);
 
   const handleClickAddItem = () => {
@@ -50,6 +55,7 @@ const ListaCarrinho = ({ item, arrayCarrinho, setArrayCarrinho }) => {
           price: item.price,
           description: item.description,
           portion: item.portion,
+          payment: valuePayment,
           quantity: updatedCount,
         },
       ]);
