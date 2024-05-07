@@ -70,6 +70,7 @@ export default function Home() {
     setPizza(false);
     setBatata(false);
     setRefrigerante(false);
+    setAgua(false)
     const filteredItems = items.filter((product) =>
       product.name.toLowerCase().includes(value.toLowerCase())
     );
