@@ -1,7 +1,15 @@
 import React from "react";
 import CardsProducts from "../Home/CardsProducts";
 
-const FilterBatata = ({ items, clickPageProduct }) => {
+const FilterBatata = ({
+  clickPageProduct,
+  toggleFavoritos,
+  arrayFavoritos,
+  setArrayFavoritos,
+  items,
+  setIsHome,
+  setIsPageProduct
+}) => {
   return (
     <div>
       <div>
@@ -15,14 +23,21 @@ const FilterBatata = ({ items, clickPageProduct }) => {
           .map((product) => (
             <div key={product.id}>
               <CardsProducts
-                id={product.id}
-                name={product.name}
-                category={product.category}
-                photo={product.photo}
-                price={product.price}
-                portion={product.portion}
-                descriptionCard={product.descriptionCard}
-                clickPageProduct={clickPageProduct}
+              id={product.id}
+              name={product.name}
+              category={product.category}
+              portion={product.portion}
+              ml={product.ml}
+              photo={product.photo}
+              price={product.price}
+              descriptionCard={product.descriptionCard}
+              clickPageProduct={clickPageProduct}
+              toggleFavoritos={toggleFavoritos}
+              arrayFavoritos={arrayFavoritos}
+              setArrayFavoritos={setArrayFavoritos}
+              items={items}
+              setIsHome={setIsHome}
+              setIsPageProduct={setIsPageProduct}
               />
             </div>
           ))}

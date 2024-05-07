@@ -1,7 +1,16 @@
 import React from "react";
 import CardsProducts from "../Home/CardsProducts";
 
-const MaisProcurados = ({ itemsBest, clickPageProduct }) => {
+const MaisProcurados = ({
+  itemsBest,
+  clickPageProduct,
+  toggleFavoritos,
+  arrayFavoritos,
+  setArrayFavoritos,
+  items,
+  setIsHome,
+  setIsPageProduct
+}) => {
   return (
     <div>
       <div className="pt-[36px]">
@@ -22,6 +31,12 @@ const MaisProcurados = ({ itemsBest, clickPageProduct }) => {
               price={product.price}
               descriptionCard={product.descriptionCard}
               clickPageProduct={clickPageProduct}
+              toggleFavoritos={toggleFavoritos}
+              arrayFavoritos={arrayFavoritos}
+              setArrayFavoritos={setArrayFavoritos}
+              items={items}
+              setIsHome={setIsHome}
+              setIsPageProduct={setIsPageProduct}
             />
           </div>
         ))}

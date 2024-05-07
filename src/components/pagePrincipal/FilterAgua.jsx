@@ -1,11 +1,19 @@
 import CardsProducts from "../Home/CardsProducts";
 
-const FilterAgua = ({ items, clickPageProduct }) => {
+const FilterAgua = ({
+  clickPageProduct,
+  toggleFavoritos,
+  arrayFavoritos,
+  setArrayFavoritos,
+  items,
+  setIsHome,
+  setIsPageProduct
+}) => {
   return (
     <div>
       <div>
         <p className="font-semibold text-[18px] text-blackPrimary pt-8">
-          Refrigerante
+          Água
         </p>
       </div>
       {items &&
@@ -17,11 +25,18 @@ const FilterAgua = ({ items, clickPageProduct }) => {
                 id={product.id}
                 name={product.name}
                 category={product.category}
+                portion={product.portion}
                 ml={product.ml}
                 photo={product.photo}
                 price={product.price}
                 descriptionCard={product.descriptionCard}
                 clickPageProduct={clickPageProduct}
+                toggleFavoritos={toggleFavoritos}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
               />
             </div>
           ))}
