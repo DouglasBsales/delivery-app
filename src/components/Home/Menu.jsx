@@ -1,7 +1,7 @@
 import { Home, ShoppingCart, Heart, ClipboardList } from "lucide-react";
 import Link from "next/link";
 
-const Menu = ({ home, pageCarrinho, pagePedido, arrayProductCarrinho }) => {
+const Menu = ({ home, pageCarrinho, pagePedido, favoritosPage, arrayProductCarrinho }) => {
   const pageHome = () => {
     pageCarrinho(false);
     home(true);
@@ -16,6 +16,11 @@ const Menu = ({ home, pageCarrinho, pagePedido, arrayProductCarrinho }) => {
     pagePedido(true);
     home(false);
   };
+
+  const isPageFavoritos = ()=>{
+    favoritosPage(true)
+    home(false)
+  }
 
 
   return (
@@ -37,7 +42,7 @@ const Menu = ({ home, pageCarrinho, pagePedido, arrayProductCarrinho }) => {
             <ShoppingCart className="text-white" size={30} />
           </button>
         </div>
-        <button>
+        <button onClick={isPageFavoritos}>
           <Heart className="text-white" size={30} />
         </button>
         <button onClick={isPagePedido}>
