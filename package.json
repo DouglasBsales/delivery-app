@@ -10,6 +10,9 @@
     "server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "lucide-react": "^0.376.0",
     "next": "14.2.3",
     "react": "^18",
