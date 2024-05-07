@@ -4,7 +4,7 @@ import { Search, SlidersHorizontal } from "lucide-react";
 
 import { useFetch } from "@/hooks/useFetch";
 import { useFetchBest } from "@/hooks/useFetchBest";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "@/components/Home/Header";
 import Buttons from "@/components/Home/Buttons";
@@ -21,6 +21,7 @@ import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
 import CarrinhoPage from "@/components/Carrinho/CarrinhoPage";
 import ProductPage from "@/components/pageProduct/ProductPage";
 import PagePedidos from "@/components/PagePedidos/PagePedidos";
+import PageFavoritos from "@/components/ItensFavoritos/PageFavoritos";
 
 const url = "https://josn-delivery-app.vercel.app/products";
 const urlBest = "https://josn-delivery-app.vercel.app/BestProducts";
@@ -46,10 +47,12 @@ export default function Home() {
 
   const [isPageCarrinho, setIsPageCarrinho] = useState(false);
   const [isPagePedido, setIsPagePedido] = useState(false);
+  const [isPageFavoritos, setIsPageFavoritos] = useState(false);
   const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
   const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
   const [arrayPedidos, setArraypedidos] = useState([]);
+  const [arrayFavoritos, setArrayFavoritos] = useState([]);
   const [valuePayment, setValuePayment] = useState("0");
 
   const handleClickFilterItem = () => {
@@ -154,6 +157,7 @@ export default function Home() {
   const clickPageProduct = (id) => {
     const selected = items.find((product) => product.id === id);
     setIsHome(false);
+    setIsPageFavoritos(false);
     setIsPageProduct(true);
     setProductExib(selected);
     setFilteredItems(selected);
@@ -207,39 +211,78 @@ export default function Home() {
               <MaisProcurados
                 itemsBest={itemsBest}
                 clickPageProduct={clickPageProduct}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
               />
             )}
 
             {burguer && (
               <FilterBurguer
-                items={items}
                 clickPageProduct={clickPageProduct}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
               />
             )}
 
             {pizza && (
-              <FilterPizza items={items} clickPageProduct={clickPageProduct} />
+              <FilterPizza
+                clickPageProduct={clickPageProduct}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
+              />
             )}
 
             {batata && (
-              <FilterBatata items={items} clickPageProduct={clickPageProduct} />
+              <FilterBatata
+                clickPageProduct={clickPageProduct}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
+              />
             )}
 
             {refrigerante && (
               <FilterRefrigerante
-                items={items}
                 clickPageProduct={clickPageProduct}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
               />
             )}
 
             {agua && (
-              <FilterAgua items={items} clickPageProduct={clickPageProduct} />
+              <FilterAgua
+                clickPageProduct={clickPageProduct}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
+              />
             )}
 
             {filteredItems && (
               <FilterItemsValue
-                filteredItems={filteredItems}
                 clickPageProduct={clickPageProduct}
+                arrayFavoritos={arrayFavoritos}
+                setArrayFavoritos={setArrayFavoritos}
+                items={items}
+                setIsHome={setIsHome}
+                setIsPageProduct={setIsPageProduct}
+                filteredItems={filteredItems}
               />
             )}
           </div>
@@ -247,6 +290,7 @@ export default function Home() {
             home={setIsHome}
             pageCarrinho={setIsPageCarrinho}
             pagePedido={setIsPagePedido}
+            favoritosPage={setIsPageFavoritos}
             arrayProductCarrinho={arrayProductCarrinho}
           />
         </div>
@@ -285,6 +329,16 @@ export default function Home() {
           setIsPagePedido={setIsPagePedido}
           valuePayment={valuePayment}
           setValuePayment={setValuePayment}
+        />
+      )}
+
+      {isPageFavoritos && (
+        <PageFavoritos
+          home={setIsHome}
+          setIsPageFavoritos={setIsPageFavoritos}
+          arrayFavoritos={arrayFavoritos}
+          clickPageProduct={clickPageProduct}
+          setArrayFavoritos={setArrayFavoritos}
         />
       )}
 
