@@ -9,7 +9,6 @@ const ProductPage = ({
   setIsHome,
   setIsPageProduct,
   setFilteredItems,
-  handleClickFilterTodos,
   photo,
   name,
   category,
@@ -20,11 +19,12 @@ const ProductPage = ({
   valuePayment,
   arrayCarrinho,
   setArrayCarrinho,
+  setAllItens,
 }) => {
   const returnPageHome = () => {
     setIsHome(true);
     setIsPageProduct(false);
-    handleClickFilterTodos(true);
+    setAllItens(true);
     setFilteredItems([]);
   };
 
