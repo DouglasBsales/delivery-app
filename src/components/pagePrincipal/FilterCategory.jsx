@@ -1,24 +1,20 @@
+import { useFilterContext } from "@/hooks/useFilterContext";
 import CardsProducts from "../Home/CardsProducts";
 
-const FilterAgua = ({
-  clickPageProduct,
-  toggleFavoritos,
-  arrayFavoritos,
-  setArrayFavoritos,
-  items,
-  setIsHome,
-  setIsPageProduct
-}) => {
+const FilterCategory = ({ categoryItem }) => {
+  const { items, clickPageProduct, arrayFavoritos, setArrayFavoritos } =
+    useFilterContext();
+
   return (
     <div>
       <div>
         <p className="font-semibold text-[18px] text-blackPrimary pt-8">
-          Água
+          {categoryItem}
         </p>
       </div>
       {items &&
         items
-          .filter((product) => product.category === "agua")
+          .filter((product) => product.category === categoryItem)
           .map((product) => (
             <div key={product.id}>
               <CardsProducts
@@ -31,12 +27,9 @@ const FilterAgua = ({
                 price={product.price}
                 descriptionCard={product.descriptionCard}
                 clickPageProduct={clickPageProduct}
-                toggleFavoritos={toggleFavoritos}
                 arrayFavoritos={arrayFavoritos}
                 setArrayFavoritos={setArrayFavoritos}
                 items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
               />
             </div>
           ))}
@@ -44,4 +37,4 @@ const FilterAgua = ({
   );
 };
 
-export default FilterAgua;
+export default FilterCategory;
