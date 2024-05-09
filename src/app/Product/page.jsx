@@ -1,91 +1,18 @@
-import { ChevronLeft, Minus, Plus } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link";
 
-const ProductPage = ({
-  photo,
-  name,
-  category,
-  price,
-  description,
-  portion,
-  ml,
-  valuePayment,
-  arrayCarrinho,
-  setArrayCarrinho,
-}) => {
-
-  const [countItem, setCountItem] = useState(1);
-
-  const handleClickAddItem = () => {
-    setCountItem((prevNumber) => prevNumber + 1);
-  };
-
-  const handleClickMinusItem = () => {
-    if (countItem === 1) {
-      return;
-    } else {
-      setCountItem((prevNumber) => prevNumber - 1);
-    }
-  };
-
-  const handleAddToCart = () => {
-    const existingItemIndex = arrayCarrinho.findIndex(
-      (item) => item.name === name
-    );
-
-    if (existingItemIndex !== -1) {
-      const newArrayCarrinho = [...arrayCarrinho];
-      newArrayCarrinho[existingItemIndex] = {
-        ...newArrayCarrinho[existingItemIndex],
-        quantity: newArrayCarrinho[existingItemIndex].quantity + countItem,
-      };
-      setArrayCarrinho(newArrayCarrinho);
-    } else {
-      // Adicionando a informação de pagamento ao novo objeto do carrinho
-      setArrayCarrinho([
-        ...arrayCarrinho,
-        {
-          photo,
-          name,
-          category,
-          price,
-          description,
-          portion,
-          quantity: countItem,
-          payment: valuePayment,
-        },
-      ]);
-    }
-
-    // lib da progress bar
-    toast.success("Produto adicionado com sucesso", {
-      position: "top-right",
-      autoClose: 4000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
-  };
-
+export default function Product() {
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4">
       <div className="flex-shrink-0 w-full h-[408px] bg-redPrimary rounded-b-[200px]">
         <div className="mx-auto py-9 px-[33px]">
           <div>
-            <button
+            <Link href="/Home"
               className="w-12 h-12 flex justify-center items-center bg-white rounded-full"
-              onClick={returnPageHome}
             >
               <ChevronLeft size={24} />
-            </button>
+            </Link>
           </div>
           <div className="flex justify-center items-center pt-[130px]">
             <Image src={photo} alt="item" width={300} height={300} />
@@ -135,7 +62,6 @@ const ProductPage = ({
                 </div>
                 <button
                   className="w-[41px] h-[41px] flex items-center justify-center bg-redPrimary rounded-full"
-                  onClick={handleClickAddItem}
                 >
                   <Plus className="text-white" />
                 </button>
@@ -143,7 +69,6 @@ const ProductPage = ({
             </div>
             <button
               className="w-[167px] h-[61px] flex items-center justify-center bg-redPrimary rounded-[30px]"
-              onClick={handleAddToCart}
             >
               <p className="text-white text-xs font-semibold">
                 Adicionar ao carrinho
@@ -167,6 +92,4 @@ const ProductPage = ({
       </div>
     </div>
   );
-};
-
-export default ProductPage;
+}

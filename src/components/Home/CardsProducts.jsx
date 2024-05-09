@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const CardsProducts = ({
   name,
@@ -29,7 +30,6 @@ const CardsProducts = ({
       setIsFavorit(isProductInFavoritos);
     }
   }, [arrayFavoritos, id]);
-
 
   const toggleFavoritos = (id) => {
     setIsFavorit(!isFavorit);
@@ -73,9 +73,9 @@ const CardsProducts = ({
             )}
           </button>
         </div>
-        <button
+        <Link
+          href="/Product"
           className="w-[326px] flex flex-col bg-white rounded-[8px] pl-[16px]"
-          onClick={() => clickPageProduct(id)}
         >
           <div className="flex justify-between">
             <div className="w-[160px] pt-[21px] text-start">
@@ -102,7 +102,7 @@ const CardsProducts = ({
               <Image src={photo} alt="imagem" width={134} height={135} />
             </div>
           </div>
-        </button>
+        </Link>
       </div>
     </div>
   );
