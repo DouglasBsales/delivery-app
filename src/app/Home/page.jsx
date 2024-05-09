@@ -5,21 +5,19 @@ import { Search, SlidersHorizontal } from "lucide-react";
 import { useFetch } from "@/hooks/useFetch";
 import { useFetchBest } from "@/hooks/useFetchBest";
 import { useState } from "react";
+import { FilterItensContext } from "@/Context/FilterItensContext";
 
 import Header from "@/components/Home/Header";
 import Buttons from "@/components/Home/Buttons";
 import Menu from "@/components/Home/Menu";
 
-import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
-
+import TodosItens from "@/components/pagePrincipal/TodosItens";
 import CarrinhoPage from "@/components/Carrinho/CarrinhoPage";
 import ProductPage from "@/components/pageProduct/ProductPage";
 import PagePedidos from "@/components/PagePedidos/PagePedidos";
 import PageFavoritos from "@/components/ItensFavoritos/PageFavoritos";
 import FilterCategory from "@/components/pagePrincipal/FilterCategory";
-import { FilterItensContext } from "@/Context/FilterItensContext";
-import AllItens from "@/components/pagePrincipal/allItens";
-import TodosItens from "@/components/pagePrincipal/TodosItens";
+import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
 
 const url = "https://josn-delivery-app.vercel.app/products";
 const urlBest = "https://josn-delivery-app.vercel.app/BestProducts";
