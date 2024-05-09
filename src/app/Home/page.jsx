@@ -171,8 +171,8 @@ export default function Home() {
           ml={productExib.ml}
           arrayCarrinho={arrayProductCarrinho}
           setArrayCarrinho={setArrayProductCarrinho}
-          handleClickFilterTodos={handleClickFilterTodos}
           valuePayment={valuePayment}
+          setAllItens={setAllItens}
         />
       )}
 
