@@ -63,8 +63,8 @@ const PageCarrinhoAdd = ({
         ))}
       </div>
       <div className="flex justify-center pt-4">
-        <button onClick={pageHome}>
-          <p className="text-blackPrimary font-semibold text-sm">
+        <button onClick={pageHome} className="py-2 px-4 bg-blackPrimary rounded-md">
+          <p className="text-white font-semibold text-sm">
             Adicionar mais itens
           </p>
         </button>

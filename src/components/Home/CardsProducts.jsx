@@ -17,8 +17,6 @@ const CardsProducts = ({
   arrayFavoritos,
   setArrayFavoritos,
   items,
-  setIsHome,
-  setIsPageProduct,
 }) => {
   const [isFavorit, setIsFavorit] = useState(false);
 
