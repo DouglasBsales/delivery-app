@@ -4,24 +4,22 @@ import { Search, SlidersHorizontal } from "lucide-react";
 
 import { useFetch } from "@/hooks/useFetch";
 import { useFetchBest } from "@/hooks/useFetchBest";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Header from "@/components/Home/Header";
 import Buttons from "@/components/Home/Buttons";
 import Menu from "@/components/Home/Menu";
 
-import MaisProcurados from "@/components/pagePrincipal/MaisProcurados";
-import FilterBurguer from "@/components/pagePrincipal/FilterBurguer";
-import FilterPizza from "@/components/pagePrincipal/FilterPizza";
-import FilterBatata from "@/components/pagePrincipal/FilterBatata";
-import FilterRefrigerante from "@/components/pagePrincipal/FilterRefrigerante";
-import FilterAgua from "@/components/pagePrincipal/FilterAgua";
 import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
 
 import CarrinhoPage from "@/components/Carrinho/CarrinhoPage";
 import ProductPage from "@/components/pageProduct/ProductPage";
 import PagePedidos from "@/components/PagePedidos/PagePedidos";
 import PageFavoritos from "@/components/ItensFavoritos/PageFavoritos";
+import FilterCategory from "@/components/pagePrincipal/FilterCategory";
+import { FilterItensContext } from "@/Context/FilterItensContext";
+import AllItens from "@/components/pagePrincipal/allItens";
+import TodosItens from "@/components/pagePrincipal/TodosItens";
 
 const url = "https://josn-delivery-app.vercel.app/products";
 const urlBest = "https://josn-delivery-app.vercel.app/BestProducts";
@@ -30,13 +28,8 @@ export default function Home() {
   const { data: items } = useFetch(url);
   const { dados: itemsBest } = useFetchBest(urlBest);
 
-  const [maisProcurados, setMaisProcurados] = useState(true);
-  const [burguer, setBurguer] = useState(true);
-  const [pizza, setPizza] = useState(true);
-  const [batata, setBatata] = useState(true);
-  const [refrigerante, setRefrigerante] = useState(true);
-  const [agua, setAgua] = useState(true);
-  const [isSelectd, setIsSelected] = useState("Todos");
+  const [allItens, setAllItens] = useState(true);
+  const [isSelected, setIsSelected] = useState("Todos");
   const [filteredItems, setFilteredItems] = useState([]);
 
   const [value, setValue] = useState("");
@@ -65,94 +58,13 @@ export default function Home() {
       return;
     }
 
-    setMaisProcurados(false);
-    setBurguer(false);
-    setPizza(false);
-    setBatata(false);
-    setRefrigerante(false);
-    setAgua(false)
-    const filteredItems = items.filter((product) =>
+    const filteredItemsSearch = items.filter((product) =>
       product.name.toLowerCase().includes(value.toLowerCase())
     );
 
-    setFilteredItems(filteredItems);
-  };
-
-  const handleClickFilterTodos = () => {
-    setMaisProcurados(true);
-    setBurguer(true);
-    setPizza(true);
-    setBatata(true);
-    setRefrigerante(true);
-    setAgua(true);
-    setIsSelected("Todos");
     setValue("");
-    setFilteredItems([]);
-  };
-
-  const handleClickFilterBurguer = () => {
-    setMaisProcurados(false);
-    setPizza(false);
-    setBatata(false);
-    setRefrigerante(false);
-    setBatata(false);
-    setBurguer(true);
-    setAgua(false);
-    setIsSelected("Burguer");
-    setValue("");
-    setFilteredItems([]);
-  };
-
-  const handleClickFilterBatata = () => {
-    setMaisProcurados(false);
-    setPizza(false);
-    setBatata(false);
-    setRefrigerante(false);
-    setAgua(false);
-    setBurguer(false);
-    setBatata(true);
-    setIsSelected("batata");
-    setValue("");
-    setFilteredItems([]);
-  };
-
-  const handleClickFilterPizza = () => {
-    setMaisProcurados(false);
-    setBurguer(false);
-    setBatata(false);
-    setRefrigerante(false);
-    setBatata(false);
-    setPizza(true);
-    setAgua(false);
-    setIsSelected("Pizza");
-    setValue("");
-    setFilteredItems([]);
-  };
-
-  const handleClickFilterRefri = () => {
-    setMaisProcurados(false);
-    setBurguer(false);
-    setBatata(false);
-    setPizza(false);
-    setBatata(false);
-    setAgua(false);
-    setRefrigerante(true);
-    setIsSelected("Refrigerante");
-    setValue("");
-    setFilteredItems([]);
-  };
-
-  const handleClickFilterAgua = () => {
-    setMaisProcurados(false);
-    setBurguer(false);
-    setBatata(false);
-    setPizza(false);
-    setRefrigerante(false);
-    setBatata(false);
-    setAgua(true);
-    setIsSelected("agua");
-    setValue("");
-    setFilteredItems([]);
+    setAllItens(false);
+    setFilteredItems(filteredItemsSearch);
   };
 
   const clickPageProduct = (id) => {
@@ -164,6 +76,8 @@ export default function Home() {
     setFilteredItems(selected);
     setValue("");
   };
+
+  const [categoryItem, setCategoryItem] = useState(null);
 
   return (
     <div className="w-full flex justify-center items-center bg-[#F5F5F5] overflow-x-hidden">
@@ -198,80 +112,28 @@ export default function Home() {
               </div>
             </div>
 
-            <Buttons
-              filterPizza={handleClickFilterPizza}
-              filterTodos={handleClickFilterTodos}
-              filterBurguer={handleClickFilterBurguer}
-              filterBatata={handleClickFilterBatata}
-              filterRefri={handleClickFilterRefri}
-              filterAgua={handleClickFilterAgua}
-              isSelected={isSelectd}
-            />
+            <FilterItensContext.Provider
+              value={{
+                items,
+                clickPageProduct,
+                isSelected,
+                setCategoryItem,
+                setIsSelected,
+                setAllItens,
+                setFilteredItems,
+              }}
+            >
+              <Buttons setCategoryItem={setCategoryItem} />
+              <FilterCategory categoryItem={categoryItem} />
+            </FilterItensContext.Provider>
 
-            {maisProcurados && (
-              <MaisProcurados
+            {allItens && (
+              <TodosItens
                 itemsBest={itemsBest}
                 clickPageProduct={clickPageProduct}
                 arrayFavoritos={arrayFavoritos}
                 setArrayFavoritos={setArrayFavoritos}
                 items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
-              />
-            )}
-
-            {burguer && (
-              <FilterBurguer
-                clickPageProduct={clickPageProduct}
-                arrayFavoritos={arrayFavoritos}
-                setArrayFavoritos={setArrayFavoritos}
-                items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
-              />
-            )}
-
-            {pizza && (
-              <FilterPizza
-                clickPageProduct={clickPageProduct}
-                arrayFavoritos={arrayFavoritos}
-                setArrayFavoritos={setArrayFavoritos}
-                items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
-              />
-            )}
-
-            {batata && (
-              <FilterBatata
-                clickPageProduct={clickPageProduct}
-                arrayFavoritos={arrayFavoritos}
-                setArrayFavoritos={setArrayFavoritos}
-                items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
-              />
-            )}
-
-            {refrigerante && (
-              <FilterRefrigerante
-                clickPageProduct={clickPageProduct}
-                arrayFavoritos={arrayFavoritos}
-                setArrayFavoritos={setArrayFavoritos}
-                items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
-              />
-            )}
-
-            {agua && (
-              <FilterAgua
-                clickPageProduct={clickPageProduct}
-                arrayFavoritos={arrayFavoritos}
-                setArrayFavoritos={setArrayFavoritos}
-                items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
               />
             )}
 
@@ -281,8 +143,6 @@ export default function Home() {
                 arrayFavoritos={arrayFavoritos}
                 setArrayFavoritos={setArrayFavoritos}
                 items={items}
-                setIsHome={setIsHome}
-                setIsPageProduct={setIsPageProduct}
                 filteredItems={filteredItems}
               />
             )}
