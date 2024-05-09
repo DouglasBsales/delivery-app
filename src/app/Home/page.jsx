@@ -119,6 +119,8 @@ export default function Home() {
                 setIsSelected,
                 setAllItens,
                 setFilteredItems,
+                arrayFavoritos,
+                setArrayFavoritos,
               }}
             >
               <Buttons setCategoryItem={setCategoryItem} />
