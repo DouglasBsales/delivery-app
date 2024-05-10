@@ -16,11 +16,8 @@ import FilterCategory from "@/components/pagePrincipal/FilterCategory";
 import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
 import SearchItens from "@/components/Home/SearchItens";
 
-
 export default function Home() {
-
   const [allItens, setAllItens] = useState(true);
-  const [filteredItems, setFilteredItems] = useState([]);
 
   {
     /* const [isHome, setIsHome] = useState(true);
@@ -54,15 +51,11 @@ export default function Home() {
             <Header />
             <SearchItens />
 
-            <Buttons
-              setAllItens={setAllItens}
-              setFilteredItems={setFilteredItems}
-            />
+            <Buttons setAllItens={setAllItens} />
             <FilterCategory />
             {allItens && <TodosItens />}
-            {filteredItems && (
-              <FilterItemsValue filteredItems={filteredItems} />
-            )}
+
+            <FilterItemsValue />
           </div>
           <Menu />
         </HomeContextProvider>
