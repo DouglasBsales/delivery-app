@@ -6,7 +6,6 @@ const Menu = ({
   pageCarrinho,
   pagePedido,
   favoritosPage,
-  arrayProductCarrinho,
 }) => {
   const pageHome = () => {
     pageCarrinho(false);
@@ -15,11 +14,6 @@ const Menu = ({
 
   const pageCarrinhoProduct = () => {
     pageCarrinho(true);
-    home(false);
-  };
-
-  const isPagePedido = () => {
-    pagePedido(true);
     home(false);
   };
 
@@ -50,9 +44,9 @@ const Menu = ({
         <button onClick={isPageFavoritos}>
           <Heart className="text-white" size={30} />
         </button>
-        <button onClick={isPagePedido}>
+        <Link href="/Pedidos">
           <ClipboardList className="text-white" size={30} />
-        </button>
+        </Link>
       </div>
     </div>
   );
