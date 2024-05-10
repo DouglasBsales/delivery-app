@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import CardsProducts from "../Home/CardsProducts";
-import { useHomeContext } from "@/hooks/useHomeContext";
+import { HomeContext } from "@/Context/Home/HomeContext";
 
 const TodosItens = () => {
-  const { itemsBest, items } = useHomeContext();
+  const { itemsBest, items } = useContext(HomeContext)
 
   return (
     <div>

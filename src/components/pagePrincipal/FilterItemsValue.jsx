@@ -1,10 +1,10 @@
-import React from "react";
+import { useContext } from "react";
 import CardsProducts from "../Home/CardsProducts";
-import { useHomeContext } from "@/hooks/useHomeContext";
+import { HomeContext } from "@/Context/Home/HomeContext";
 
 const FilterItemsValue = () => {
   const { filteredItems, arrayFavoritos, setArrayFavoritos, items } =
-    useHomeContext();
+    useContext(HomeContext);
 
   return filteredItems.map((product) => (
     <div key={product.id}>

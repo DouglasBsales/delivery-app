@@ -1,9 +1,29 @@
-import { useHomeContext } from "@/hooks/useHomeContext";
+import { HomeContext } from "@/Context/Home/HomeContext";
 import { Search, SlidersHorizontal } from "lucide-react";
+import { useContext } from "react";
 
-const SearchItens = () => {
+const SearchItens = ({setAllItens}) => {
 
-  const {value, setValue, handleClickFilterItem} = useHomeContext()
+  const {value, setValue, items, setFilteredItems} = useContext(HomeContext)
+
+  const handleClickFilterItem = () => {
+    if (value.trim() === "") {
+      alert("Insira um item, por favor");
+      return;
+    }
+
+    if (!items) {
+      return;
+    }
+
+    const filteredItemsSearch = items.filter((product) =>
+      product.name.toLowerCase().includes(value.toLowerCase())
+    );
+
+    setValue("");
+    setFilteredItems(filteredItemsSearch);
+    setAllItens(false)
+  };
 
   return (
     <div className="flex pt-[44px]">
