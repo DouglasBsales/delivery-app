@@ -1,10 +1,9 @@
 "use client";
-import { useFilterContext } from "@/hooks/useFilterContext";
+import { useHomeContext } from "@/hooks/useHomeContext";
 import "./Buttons.css";
 
-const Buttons = ({ setCategoryItem }) => {
-  const { setIsSelected, setAllItens, isSelected, setFilteredItems } =
-    useFilterContext();
+const Buttons = ({ setAllItens, setFilteredItems }) => {
+  const { setIsSelected, isSelected, setCategoryItem } = useHomeContext();
 
   const categoryPizza = () => {
     setCategoryItem("Pizza");
@@ -41,7 +40,7 @@ const Buttons = ({ setCategoryItem }) => {
     setAllItens(false);
   };
 
-  const allItens = () => {
+  const allItensView = () => {
     setCategoryItem(null);
     setFilteredItems([]);
     setAllItens(true);
@@ -57,7 +56,7 @@ const Buttons = ({ setCategoryItem }) => {
               ? "bg-redPrimary text-white "
               : "bg-white text-blackPrimary "
           }`}
-          onClick={allItens}
+          onClick={allItensView}
         >
           <p className="font-semibold text-[14px]">Todos</p>
         </button>
