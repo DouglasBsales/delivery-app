@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { useHomeContext } from "@/hooks/useHomeContext";
 
 const CardsProducts = ({
   name,
@@ -14,11 +15,10 @@ const CardsProducts = ({
   price,
   descriptionCard,
   id,
-  clickPageProduct,
-  arrayFavoritos,
-  setArrayFavoritos,
-  items,
 }) => {
+
+  const {arrayFavoritos, setArrayFavoritos, items} = useHomeContext()
+
   const [isFavorit, setIsFavorit] = useState(false);
 
   // Verifica se o produto atual está nos favoritos ao carregar a página
