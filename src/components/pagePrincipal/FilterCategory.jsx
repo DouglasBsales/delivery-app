@@ -1,9 +1,9 @@
-import { useFilterContext } from "@/hooks/useFilterContext";
+import { useHomeContext } from "@/hooks/useHomeContext";
 import CardsProducts from "../Home/CardsProducts";
 
-const FilterCategory = ({ categoryItem }) => {
-  const { items, clickPageProduct, arrayFavoritos, setArrayFavoritos } =
-    useFilterContext();
+const FilterCategory = () => {
+  const { items, arrayFavoritos, setArrayFavoritos, categoryItem } =
+    useHomeContext();
 
   return (
     <div>
@@ -26,7 +26,6 @@ const FilterCategory = ({ categoryItem }) => {
                 photo={product.photo}
                 price={product.price}
                 descriptionCard={product.descriptionCard}
-                clickPageProduct={clickPageProduct}
                 arrayFavoritos={arrayFavoritos}
                 setArrayFavoritos={setArrayFavoritos}
                 items={items}
