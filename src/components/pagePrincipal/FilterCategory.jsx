@@ -26,9 +26,6 @@ const FilterCategory = () => {
                 photo={product.photo}
                 price={product.price}
                 descriptionCard={product.descriptionCard}
-                arrayFavoritos={arrayFavoritos}
-                setArrayFavoritos={setArrayFavoritos}
-                items={items}
               />
             </div>
           ))}
