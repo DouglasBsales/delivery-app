@@ -2,8 +2,8 @@
 import { useHomeContext } from "@/hooks/useHomeContext";
 import "./Buttons.css";
 
-const Buttons = ({ setAllItens, setFilteredItems }) => {
-  const { setIsSelected, isSelected, setCategoryItem } = useHomeContext();
+const Buttons = ({ setAllItens}) => {
+  const { setIsSelected, isSelected, setCategoryItem, setFilteredItems} = useHomeContext();
 
   const categoryPizza = () => {
     setCategoryItem("Pizza");
