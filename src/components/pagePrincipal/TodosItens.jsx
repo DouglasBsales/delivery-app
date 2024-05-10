@@ -1,13 +1,10 @@
 import React from "react";
 import CardsProducts from "../Home/CardsProducts";
+import { useHomeContext } from "@/hooks/useHomeContext";
 
-const TodosItens = ({
-  itemsBest,
-  clickPageProduct,
-  arrayFavoritos,
-  setArrayFavoritos,
-  items,
-}) => {
+const TodosItens = () => {
+  const { itemsBest, items } = useHomeContext();
+
   return (
     <div>
       <div>
@@ -28,10 +25,6 @@ const TodosItens = ({
                 photo={product.photo}
                 price={product.price}
                 descriptionCard={product.descriptionCard}
-                clickPageProduct={clickPageProduct}
-                arrayFavoritos={arrayFavoritos}
-                setArrayFavoritos={setArrayFavoritos}
-                items={items}
               />
             </div>
           ))}
@@ -53,10 +46,6 @@ const TodosItens = ({
                   photo={product.photo}
                   price={product.price}
                   descriptionCard={product.descriptionCard}
-                  clickPageProduct={clickPageProduct}
-                  arrayFavoritos={arrayFavoritos}
-                  setArrayFavoritos={setArrayFavoritos}
-                  items={items}
                 />
               </div>
             ))}
