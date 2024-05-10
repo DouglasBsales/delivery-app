@@ -1,9 +1,10 @@
 "use client";
-import { useHomeContext } from "@/hooks/useHomeContext";
+import { HomeContext } from "@/Context/Home/HomeContext";
 import "./Buttons.css";
+import { useContext } from "react";
 
 const Buttons = ({ setAllItens}) => {
-  const { setIsSelected, isSelected, setCategoryItem, setFilteredItems} = useHomeContext();
+  const { setIsSelected, isSelected, setCategoryItem, setFilteredItems} = useContext(HomeContext);
 
   const categoryPizza = () => {
     setCategoryItem("Pizza");
