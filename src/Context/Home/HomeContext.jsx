@@ -23,8 +23,6 @@ export default function HomeContextProvider({ children }) {
   const [arrayPedidos, setArraypedidos] = useState([]);
   const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
-  const [valuePayment, setValuePayment] = useState("0");
-
   const [value, setValue] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
 
