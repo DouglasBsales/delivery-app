@@ -7,10 +7,11 @@ import { HomeContext } from "@/Context/Home/HomeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
+import { ProductContext } from "@/Context/Product/ProductContext";
 
 const CardsProducts = ({ item }) => {
-  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } =
-    useContext(HomeContext);
+  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } = useContext(HomeContext);
+  const { setCountItem } = useContext(ProductContext);
 
   const [isFavorit, setIsFavorit] = useState(false);
 
@@ -18,6 +19,7 @@ const CardsProducts = ({ item }) => {
     const selected = items.find((product) => product.id === id);
     setValue("");
     setProductExib(selected);
+    setCountItem(1);
   };
 
   // Verifica se o produto atual está nos favoritos ao carregar a página
