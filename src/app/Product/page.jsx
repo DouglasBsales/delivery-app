@@ -1,19 +1,72 @@
 "use client";
 
-import React, { useContext } from "react";
-import { Bounce, ToastContainer } from "react-toastify";
-import { ChevronLeft, Minus, Plus } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link";""
+
+import { useContext } from "react";
 import { HomeContext } from "@/Context/Home/HomeContext";
-import ProductContextProvider, {
-  ProductContext,
-} from "@/Context/Product/ProductContext";
+import { ProductContext } from "@/Context/Product/ProductContext";
+
+import { ChevronLeft, Minus, Plus } from "lucide-react";
+
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Product() {
   const { productExib } = useContext(HomeContext);
-  const { countItem, handleClickAddItem, handleClickMinusItem } =
-    useContext(ProductContext);
+  const {
+    countItem,
+    handleClickAddItem,
+    handleClickMinusItem,
+    arrayCarrinho,
+    setArrayCarrinho,
+    valuePayment,
+  } = useContext(ProductContext);
+
+  const handleAddToCart = () => {
+    const existingItemIndex = arrayCarrinho.findIndex(
+      (item) => item.name === productExib.name
+    );
+
+    if (existingItemIndex !== -1) {
+      const newArrayCarrinho = [...arrayCarrinho];
+      newArrayCarrinho[existingItemIndex] = {
+        ...newArrayCarrinho[existingItemIndex],
+        quantity: newArrayCarrinho[existingItemIndex].quantity + countItem,
+      };
+      setArrayCarrinho(newArrayCarrinho);
+    } else {
+      // Adicionando a informação de pagamento ao novo objeto do carrinho
+      setArrayCarrinho([
+        ...arrayCarrinho,
+        {
+          photo: productExib.photo,
+          name: productExib.name,
+          category: productExib.category,
+          price: productExib.price,
+          description: productExib.description,
+          portion: productExib.portion,
+          quantity: countItem,
+          payment: valuePayment,
+        },
+      ]);
+    }
+
+    // lib da progress bar
+    toast.success("Produto adicionado com sucesso", {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+
+    console.log(arrayCarrinho);
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 ">
@@ -88,7 +141,10 @@ export default function Product() {
                 </button>
               </div>
             </div>
-            <button className="w-[167px] h-[61px] flex items-center justify-center bg-redPrimary rounded-[30px]">
+            <button
+              className="w-[167px] h-[61px] flex items-center justify-center bg-redPrimary rounded-[30px]"
+              onClick={handleAddToCart}
+            >
               <p className="text-white text-xs font-semibold">
                 Adicionar ao carrinho
               </p>
