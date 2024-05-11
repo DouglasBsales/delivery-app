@@ -61,17 +61,9 @@ export default function Product() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 ">
-      <div className="flex-shrink-0 w-full h-[408px] bg-redPrimary rounded-b-[200px]">
+      <div className="flex-shrink-0 w-full h-[350px] bg-redPrimary rounded-b-[200px]">
         <div className="mx-auto py-9 px-[33px]">
-          <div>
-            <Link
-              href="/Home"
-              className="w-12 h-12 flex justify-center items-center bg-white rounded-full"
-            >
-              <ChevronLeft size={24} />
-            </Link>
-          </div>
-          <div className="flex justify-center items-center pt-[130px]">
+          <div className="flex justify-center items-center pt-[120px]">
             <Image
               src={productExib.photo}
               alt="item"
