@@ -64,8 +64,6 @@ export default function Product() {
       theme: "light",
       transition: Bounce,
     });
-
-    console.log(arrayCarrinho);
   };
 
   return (
