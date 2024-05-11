@@ -4,8 +4,8 @@ import pedidoNaoRealizado from "../../assets/PedidoNaoRealizado.png";
 
 const CarrinhoVazio = () => {
   return (
-    <div className="flex flex-col items-center">
-      <div className="pt-[60px]">
+    <div className="flex flex-col">
+      <div className="flex justify-center pt-[120px] ">
         <Image src={pedidoNaoRealizado} alt="imagem" width={250} height={250} />
       </div>
       <div className="w-[270px] flex flex-col items-center pt-5">
