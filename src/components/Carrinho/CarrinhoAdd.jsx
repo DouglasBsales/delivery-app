@@ -19,13 +19,13 @@ const CarrinhoAdd = () => {
   } = useContext(ProductContext);
 
   return (
-    <div className="pb-[50px]">
+    <div>
       <div className="pt-[50px]">
         <p className="font-semibold text-blackPrimary text-xl">
           Itens adicionados
         </p>
       </div>
-      <div className="flex flex-col pt-8">
+      <div className="flex flex-col">
         {arrayCarrinho.map((item) => (
           <div key={item.id} className="w-[326px] flex flex-col pl-[16px]">
             <ListaCarrinho item={{ ...item }} />
@@ -83,7 +83,7 @@ const CarrinhoAdd = () => {
           </p>
         </div>
       </div>
-      <div className="pt-[70px]">
+      <div className="pt-[40px] pb-[150px]">
         <button
           className="flex justify-center items-center w-[320px] h-[39px] bg-redPrimary rounded-[30px]"
           onClick={handleClickAddPedido}
