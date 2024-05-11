@@ -6,6 +6,8 @@ export const ProductContext = createContext({ countItem: 1 });
 
 export default function ProductContextProvider({ children }) {
   const [countItem, setCountItem] = useState(1);
+  const [arrayCarrinho, setArrayCarrinho] = useState([])
+  const [valuePayment, setValuePayment] = useState("0");
 
   const handleClickAddItem = () => {
     setCountItem((prevNumber) => prevNumber + 1);
@@ -19,9 +21,10 @@ export default function ProductContextProvider({ children }) {
     }
   };
 
+
   return (
     <ProductContext.Provider
-      value={{ countItem, handleClickAddItem, handleClickMinusItem }}
+      value={{ countItem, handleClickAddItem, handleClickMinusItem, arrayCarrinho, setArrayCarrinho, valuePayment }}
     >
       {children}
     </ProductContext.Provider>
