@@ -4,9 +4,9 @@ import { useState } from "react";
 import Header from "@/components/Home/Header";
 import Buttons from "@/components/Home/Buttons";
 
-import TodosItens from "@/components/pagePrincipal/TodosItens";
-import FilterCategory from "@/components/pagePrincipal/FilterCategory";
-import FilterItemsValue from "@/components/pagePrincipal/FilterItemsValue";
+import TodosItens from "@/components/Home/TodosItens";
+import FilterCategory from "@/components/Home/FilterCategory";
+import FilterItemsValue from "@/components/Home/FilterItemsValue";
 import SearchItens from "@/components/Home/SearchItens";
 
 export default function Home() {
@@ -15,10 +15,7 @@ export default function Home() {
   {
     /* 
   const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
-
-  const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
   const [arrayFavoritos, setArrayFavoritos] = useState([]);
-
   /*/
   }
 
