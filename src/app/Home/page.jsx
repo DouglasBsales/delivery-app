@@ -17,9 +17,7 @@ export default function Home() {
   const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
   const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
-  const [arrayPedidos, setArraypedidos] = useState([]);
   const [arrayFavoritos, setArrayFavoritos] = useState([]);
-  const [valuePayment, setValuePayment] = useState("0");
 
   /*/
   }

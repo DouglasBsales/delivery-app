@@ -1,9 +1,17 @@
-import { HomeContext } from "@/Context/Home/HomeContext";
-import { ChevronLeft } from "lucide-react";
+"use client";
+
 import Link from "next/link";
+
+import { ProductContext } from "@/Context/Product/ProductContext";
 import { useContext } from "react";
 
-export default function Pedidos() {
+import { ChevronLeft } from "lucide-react";
+
+import CarrinhoAdd from "@/components/Carrinho/CarrinhoAdd";
+import CarrinhoVazio from "@/components/Carrinho/CarrinhoVazio";
+
+export default function Carrinho() {
+  const { arrayCarrinho } = useContext(ProductContext);
 
   return (
     <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5]">
@@ -18,11 +26,15 @@ export default function Pedidos() {
             </Link>
           </div>
           <div className="h-[100px] flex justify-center items-end">
-            <p className="text-4xl text-white font-semibold">Pedidos</p>
+            <p className="text-4xl text-white font-semibold">Carrinho</p>
           </div>
         </div>
       </div>
-      <div className="w-[393px] flex flex-col px-[33px] mx-auto"></div>
+      <div className="flex-1 max-w-[393px] mx-auto px-[33px]">
+        {arrayCarrinho.length === 0 && <CarrinhoVazio />}
+
+        {arrayCarrinho.length >= 1 && <CarrinhoAdd />}
+      </div>
     </div>
   );
 }

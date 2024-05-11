@@ -20,7 +20,6 @@ export default function HomeContextProvider({ children }) {
 
   const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
   const [arrayFavoritos, setArrayFavoritos] = useState([]);
-  const [arrayPedidos, setArraypedidos] = useState([]);
   const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
   const [value, setValue] = useState("");
@@ -62,7 +61,9 @@ export default function HomeContextProvider({ children }) {
         setProductExib,
         handleClickAddItem,
         handleClickMinusItem,
-        countItem
+        countItem,
+        arrayPedidosRealizados,
+        setArrayPedidosRealizados
       }}
     >
       {children}
