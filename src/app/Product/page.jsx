@@ -1,16 +1,22 @@
-import { HomeContext } from "@/Context/Home/HomeContext";
-import { ChevronLeft, Minus, Plus } from "lucide-react";
-import { useContext } from "react";
-import { Bounce, ToastContainer } from "react-toastify";
+"use client";
 
+import React, { useContext } from "react";
+import { Bounce, ToastContainer } from "react-toastify";
+import { ChevronLeft, Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { HomeContext } from "@/Context/Home/HomeContext";
+import ProductContextProvider, {
+  ProductContext,
+} from "@/Context/Product/ProductContext";
 
 export default function Product() {
   const { productExib } = useContext(HomeContext);
+  const { countItem, handleClickAddItem, handleClickMinusItem } =
+    useContext(ProductContext);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4">
+    <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 ">
       <div className="flex-shrink-0 w-full h-[408px] bg-redPrimary rounded-b-[200px]">
         <div className="mx-auto py-9 px-[33px]">
           <div>
@@ -22,41 +28,62 @@ export default function Product() {
             </Link>
           </div>
           <div className="flex justify-center items-center pt-[130px]">
-            <Image src={""} alt="item" width={300} height={300} />
+            <Image
+              src={productExib.photo}
+              alt="item"
+              width={300}
+              height={300}
+            />
           </div>
         </div>
       </div>
-      <div className="flex-1 max-w-[393px] px-[33px]">
+      <div className="w-[393px] flex flex-col px-[33px] mx-auto pt-[37px] pb-20">
         <div className="flex flex-col items-start h-full">
           <div className="w-full flex justify-between pt-[100px]">
-            <p className="w-[200px] text-xl font-bold text-blackPrimary"></p>
-            <p className="text-xl font-bold text-redPrimary"></p>
+            <p className="w-[200px] text-xl font-bold text-blackPrimary">
+              {productExib.name}
+            </p>
+            <p className="text-xl font-bold text-redPrimary">
+              R$ {productExib.price.toFixed(2).replace(".", ",")}
+            </p>
           </div>
           <div>
-            <p className="text-redPrimary font-semibold"></p>
+            <p className="text-redPrimary font-semibold">
+              {productExib.gramas}
+            </p>
           </div>
           <div>
-            <p className="text-redPrimary font-semibold"></p>
+            <p className="text-redPrimary font-semibold">{productExib.ml}</p>
           </div>
           <div>
-            <p className="text-xs font-semibold text-blackOpacity"></p>
+            <p className="text-xs font-semibold text-blackOpacity">
+              {productExib.category}
+            </p>
           </div>
           <div className="w-[100px] h-[37px] flex items-center justify-center  rounded-[30px] bg-redPrimary mt-5">
             <p className="text-white text-xs font-semibold">Detalhes</p>
           </div>
           <div className="pt-5">
-            <p className="font-semibold text-blackOpacity text-sm"></p>
+            <p className="font-semibold text-blackOpacity text-sm">
+              {productExib.description}
+            </p>
           </div>
           <div className="flex justify-between pt-[70px] gap-3">
             <div className="w-[148px] h-[61px] flex items-center justify-center rounded-[30px] bg-white">
               <div className="w-[125px] flex justify-between">
-                <button className="w-[41px] h-[41px] flex items-center justify-center bg-redPrimary rounded-full">
+                <button
+                  className="w-[41px] h-[41px] flex items-center justify-center bg-redPrimary rounded-full"
+                  onClick={handleClickMinusItem}
+                >
                   <Minus className="text-white" />
                 </button>
                 <div className="flex items-center">
-                  <p className="font-semibold text-lg"></p>
+                  <p className="font-semibold text-lg">{countItem}</p>
                 </div>
-                <button className="w-[41px] h-[41px] flex items-center justify-center bg-redPrimary rounded-full">
+                <button
+                  className="w-[41px] h-[41px] flex items-center justify-center bg-redPrimary rounded-full"
+                  onClick={handleClickAddItem}
+                >
                   <Plus className="text-white" />
                 </button>
               </div>
