@@ -21,22 +21,22 @@ const Buttons = ({ setAllItens}) => {
   };
 
   const categoryBatata = () => {
-    setCategoryItem("batata");
-    setIsSelected("batata");
+    setCategoryItem("Batata");
+    setIsSelected("Batata");
     setFilteredItems([]);
     setAllItens(false);
   };
 
   const categoryRefri = () => {
-    setCategoryItem("refrigerante");
-    setIsSelected("refrigerante");
+    setCategoryItem("Refrigerante");
+    setIsSelected("Refrigerante");
     setFilteredItems([]);
     setAllItens(false);
   };
 
   const categoryAgua = () => {
-    setCategoryItem("agua");
-    setIsSelected("agua");
+    setCategoryItem("Agua");
+    setIsSelected("Agua");
     setFilteredItems([]);
     setAllItens(false);
   };
@@ -90,7 +90,7 @@ const Buttons = ({ setAllItens}) => {
       <div>
         <button
           className={`px-6 py-2  rounded-[30px] outline-none ${
-            isSelected === "batata"
+            isSelected === "Batata"
               ? "bg-redPrimary text-white "
               : "bg-white text-blackPrimary "
           }`}
@@ -103,7 +103,7 @@ const Buttons = ({ setAllItens}) => {
       <div>
         <button
           className={`px-6 py-2 rounded-[30px] outline-none ${
-            isSelected === "refrigerante"
+            isSelected === "Refrigerante"
               ? "bg-redPrimary text-white "
               : "bg-white text-blackPrimary "
           }`}
@@ -115,7 +115,7 @@ const Buttons = ({ setAllItens}) => {
       <div>
         <button
           className={`px-6 py-2 rounded-[30px] outline-none ${
-            isSelected === "agua"
+            isSelected === "Agua"
               ? "bg-redPrimary text-white "
               : "bg-white text-blackPrimary "
           }`}
