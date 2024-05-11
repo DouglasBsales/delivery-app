@@ -1,7 +1,8 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import HomeContextProvider from "@/Context/Home/HomeContext";
-
+import Menu from "@/components/Home/Menu";
+import ProductContextProvider from "@/Context/Product/ProductContext";
 
 const montSerrat = Montserrat({
   weight: ["200", "300", "400", "700"],
@@ -19,9 +20,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <HomeContextProvider>
-        <body className={montSerrat.className}>{children}</body>
-      </HomeContextProvider>
+      <body className={montSerrat.className}>
+        <HomeContextProvider>
+          <ProductContextProvider>{children}</ProductContextProvider>
+        </HomeContextProvider>
+        <div className="w-full flex justify-center bg-[#F5F5F5]">
+          <Menu />
+        </div>
+      </body>
     </html>
   );
 }
