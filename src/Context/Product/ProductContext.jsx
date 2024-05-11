@@ -53,13 +53,14 @@ export default function ProductContextProvider({ children }) {
     <ProductContext.Provider
       value={{
         countItem,
+        setCountItem,
         handleClickAddItem,
         handleClickMinusItem,
         arrayCarrinho,
         setArrayCarrinho,
         valuePayment,
         setValuePayment,
-        modalPedido, 
+        modalPedido,
         pagamentoTrue,
         handleClickAddPedido
       }}
