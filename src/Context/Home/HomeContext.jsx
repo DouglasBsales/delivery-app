@@ -5,7 +5,6 @@ import { useFetchBest } from "@/hooks/useFetchBest";
 import { useState } from "react";
 import { useFetch } from "@/hooks/useFetch";
 
-
 export const HomeContext = createContext();
 
 export default function HomeContextProvider({ children }) {
@@ -27,21 +26,6 @@ export default function HomeContextProvider({ children }) {
 
   const [productExib, setProductExib] = useState(null);
 
-
-  const [countItem, setCountItem] = useState(1);
-
-  const handleClickAddItem = () => {
-    setCountItem((prevNumber) => prevNumber + 1);
-  };
-
-  const handleClickMinusItem = () => {
-    if (countItem === 1) {
-      return;
-    } else {
-      setCountItem((prevNumber) => prevNumber - 1);
-    }
-  };
-
   return (
     <HomeContext.Provider
       value={{
@@ -59,11 +43,8 @@ export default function HomeContextProvider({ children }) {
         setValue,
         productExib,
         setProductExib,
-        handleClickAddItem,
-        handleClickMinusItem,
-        countItem,
         arrayPedidosRealizados,
-        setArrayPedidosRealizados
+        setArrayPedidosRealizados,
       }}
     >
       {children}
