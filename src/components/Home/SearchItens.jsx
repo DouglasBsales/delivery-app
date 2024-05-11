@@ -1,10 +1,9 @@
+import { useContext } from "react";
 import { HomeContext } from "@/Context/Home/HomeContext";
 import { Search, SlidersHorizontal } from "lucide-react";
-import { useContext } from "react";
 
-const SearchItens = ({setAllItens}) => {
-
-  const {value, setValue, items, setFilteredItems} = useContext(HomeContext)
+const SearchItens = ({ setAllItens }) => {
+  const { value, setValue, items, setFilteredItems } = useContext(HomeContext);
 
   const handleClickFilterItem = () => {
     if (value.trim() === "") {
@@ -22,7 +21,7 @@ const SearchItens = ({setAllItens}) => {
 
     setValue("");
     setFilteredItems(filteredItemsSearch);
-    setAllItens(false)
+    setAllItens(false);
   };
 
   return (
@@ -44,7 +43,10 @@ const SearchItens = ({setAllItens}) => {
         </div>
       </div>
       <div className="pl-5">
-        <button className="w-[54px] h-[54px] flex items-center justify-center text- bg-redPrimary rounded-full" onClick={handleClickFilterItem}>
+        <button
+          className="w-[54px] h-[54px] flex items-center justify-center text- bg-redPrimary rounded-full"
+          onClick={handleClickFilterItem}
+        >
           <SlidersHorizontal className="text-white" />
         </button>
       </div>
