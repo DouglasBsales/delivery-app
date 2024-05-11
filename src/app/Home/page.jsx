@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import Header from "@/components/Home/Header";
 import Buttons from "@/components/Home/Buttons";
-import Menu from "@/components/Home/Menu";
 
 import TodosItens from "@/components/pagePrincipal/TodosItens";
 import FilterCategory from "@/components/pagePrincipal/FilterCategory";
@@ -26,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full flex justify-center items-center bg-[#F5F5F5] overflow-x-hidden">
+    <div className="w-full flex justify-center  bg-[#F5F5F5] overflow-x-hidden">
       <div>
         <div className="w-[393px] min-h-screen flex flex-col px-[33px] pt-[37px] pb-20">
           <Header />
@@ -38,7 +37,6 @@ export default function Home() {
 
           <FilterItemsValue />
         </div>
-        <Menu />
       </div>
     </div>
   );
