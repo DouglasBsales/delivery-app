@@ -1,9 +1,11 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { HomeContext } from "@/Context/Home/HomeContext";
 
 const CardsProducts = ({
   name,
@@ -14,12 +16,22 @@ const CardsProducts = ({
   price,
   descriptionCard,
   id,
-  clickPageProduct,
-  arrayFavoritos,
-  setArrayFavoritos,
-  items,
 }) => {
+  const {
+    arrayFavoritos,
+    setArrayFavoritos,
+    items,
+    setProductExib,
+    setValue,
+  } = useContext(HomeContext)
+
   const [isFavorit, setIsFavorit] = useState(false);
+
+  const exibirProduct = (id) => {
+    const selected = items.find((product) => product.id === id);
+    setValue("");
+    setProductExib(selected);
+  };
 
   // Verifica se o produto atual está nos favoritos ao carregar a página
   useEffect(() => {
@@ -76,6 +88,7 @@ const CardsProducts = ({
         <Link
           href="/Product"
           className="w-[326px] flex flex-col bg-white rounded-[8px] pl-[16px]"
+          onClick={() => exibirProduct(id)}
         >
           <div className="flex justify-between">
             <div className="w-[160px] pt-[21px] text-start">
