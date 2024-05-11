@@ -1,35 +1,15 @@
 import { Home, ShoppingCart, Heart, ClipboardList } from "lucide-react";
 import Link from "next/link";
 
-const Menu = ({
-  home,
-  pageCarrinho,
-  pagePedido,
-  favoritosPage,
-}) => {
-  const pageHome = () => {
-    pageCarrinho(false);
-    home(true);
-  };
-
-  const pageCarrinhoProduct = () => {
-    pageCarrinho(true);
-    home(false);
-  };
-
-  const isPageFavoritos = () => {
-    favoritosPage(true);
-    home(false);
-  };
-
+const Menu = () => {
   return (
     <div className="fixed bottom-0">
       <div className="w-[393px] h-[65px] flex items-center justify-around bg-redPrimary rounded-t-md pt-2">
-        <button onClick={pageHome}>
+        <Link href="/Home">
           <Home className="text-white" size={30} />
-        </button>
+        </Link>
         <div className="flex flex-col relative">
-          <button onClick={pageCarrinhoProduct}>
+          <button>
             <div className="absolute top-[-12px] left-5 ">
               <p className=" text-white text-xs">
                 {/*{arrayProductCarrinho.reduce(
@@ -41,7 +21,7 @@ const Menu = ({
             <ShoppingCart className="text-white" size={30} />
           </button>
         </div>
-        <button onClick={isPageFavoritos}>
+        <button>
           <Heart className="text-white" size={30} />
         </button>
         <Link href="/Pedidos">
