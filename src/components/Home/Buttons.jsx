@@ -1,7 +1,8 @@
 "use client";
 import { HomeContext } from "@/Context/Home/HomeContext";
-import "./Buttons.css";
 import { useContext } from "react";
+
+import "./Buttons.css";
 
 const Buttons = ({ setAllItens}) => {
   const { setIsSelected, isSelected, setCategoryItem, setFilteredItems} = useContext(HomeContext);
