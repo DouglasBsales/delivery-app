@@ -17,8 +17,13 @@ const CardsProducts = ({
   descriptionCard,
   id,
 }) => {
-  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } =
-    useContext(HomeContext);
+  const {
+    arrayFavoritos,
+    setArrayFavoritos,
+    items,
+    setProductExib,
+    setValue,
+  } = useContext(HomeContext)
 
   const [isFavorit, setIsFavorit] = useState(false);
 
