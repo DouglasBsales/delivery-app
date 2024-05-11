@@ -5,7 +5,6 @@ import { useContext } from "react";
 
 export default function Pedidos() {
 
-
   return (
     <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5]">
       <div className="flex-shrink-0 w-full bg-redPrimary">
