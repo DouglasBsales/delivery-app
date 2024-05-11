@@ -14,14 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Product() {
   const { productExib } = useContext(HomeContext);
-  const {
-    countItem,
-    handleClickAddItem,
-    handleClickMinusItem,
-    arrayCarrinho,
-    setArrayCarrinho,
-    valuePayment,
-  } = useContext(ProductContext);
+  const { countItem, handleClickAddItem, handleClickMinusItem, arrayCarrinho, setArrayCarrinho, valuePayment } = useContext(ProductContext);
 
   const handleAddToCart = () => {
     const existingItemIndex = arrayCarrinho.findIndex(
