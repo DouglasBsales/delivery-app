@@ -12,12 +12,11 @@ export default function HomeContextProvider({ children }) {
   const urlBest = "https://josn-delivery-app.vercel.app/BestProducts";
 
   const { data: items } = useFetch(url);
-  const { dados: itemsBest } = useFetchBest(urlBest);
+  const { dados: itemsBest, loading } = useFetchBest(urlBest);
 
   const [categoryItem, setCategoryItem] = useState(null);
   const [isSelected, setIsSelected] = useState("Todos");
 
-  const [arrayProductCarrinho, setArrayProductCarrinho] = useState([]);
   const [arrayFavoritos, setArrayFavoritos] = useState([]);
   const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
@@ -45,6 +44,7 @@ export default function HomeContextProvider({ children }) {
         setProductExib,
         arrayPedidosRealizados,
         setArrayPedidosRealizados,
+        loading
       }}
     >
       {children}
