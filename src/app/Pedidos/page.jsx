@@ -1,9 +1,15 @@
-import { HomeContext } from "@/Context/Home/HomeContext";
-import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
+"use client";
+
 import { useContext } from "react";
+import { ProductContext } from "@/Context/Product/ProductContext";
+
+import PedidoVazio from "@/components/Pedidos/PedidoVazio";
+import PedidosRealizados from "@/components/Pedidos/PedidosRealizados";
+
 
 export default function Pedidos() {
+  const { arrayPedidosRealizados } = useContext(ProductContext);
+
   return (
     <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5]">
       <div className="flex-shrink-0 w-full bg-redPrimary">
@@ -13,7 +19,13 @@ export default function Pedidos() {
           </div>
         </div>
       </div>
-      <div className="w-[393px] flex flex-col px-[33px] mx-auto"></div>
+      <div className="w-[393px] flex flex-col px-[33px] mx-auto">
+        {arrayPedidosRealizados.length === 0 ? (
+          <PedidoVazio />
+        ) : (
+          <PedidosRealizados />
+        )}
+      </div>
     </div>
   );
 }
