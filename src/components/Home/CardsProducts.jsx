@@ -10,7 +10,8 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
 const CardsProducts = ({ item }) => {
-  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } = useContext(HomeContext);
+  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } =
+    useContext(HomeContext);
   const { setCountItem } = useContext(ProductContext);
 
   const [isFavorit, setIsFavorit] = useState(false);
@@ -51,6 +52,7 @@ const CardsProducts = ({ item }) => {
 
     const selected = items.find((product) => product.id === id);
     setArrayFavoritos([...arrayFavoritos, selected]);
+    
   };
 
   return (
