@@ -4,7 +4,12 @@ import { CircleCheckBig } from "lucide-react";
 import Link from "next/link";
 
 const ModalPedidoRealizado = () => {
-  const { setArrayCarrinho } = useContext(ProductContext);
+  const { setArrayCarrinho, setModalPedido } = useContext(ProductContext);
+
+  const closeModal = () => {
+    setArrayCarrinho([]);
+    setModalPedido(false);
+  };
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -20,7 +25,7 @@ const ModalPedidoRealizado = () => {
         <div className="flex justify-center pt-4 pb-2">
           <button
             className="w-[200px] flex justify-center items-center bg-blackPrimary rounded-[30px] py-1"
-            onClick={() => setArrayCarrinho([])}
+            onClick={closeModal}
           >
             <Link href="/Pedidos" className="text-white font-semibold">
               Visualizar pedido
