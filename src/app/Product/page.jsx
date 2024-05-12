@@ -58,6 +58,9 @@ export default function Product() {
     });
   };
 
+  if (!productExib) return null;
+
+
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 ">
       <div className="flex-shrink-0 w-full h-[350px] bg-redPrimary rounded-b-[200px]">
