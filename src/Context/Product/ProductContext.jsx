@@ -47,6 +47,8 @@ export default function ProductContextProvider({ children }) {
     ]);
 
     setModalPedido(true);
+    setPagamentotrue(false)
+    setValuePayment("0")
   };
 
   return (
@@ -61,6 +63,7 @@ export default function ProductContextProvider({ children }) {
         valuePayment,
         setValuePayment,
         modalPedido,
+        setModalPedido,
         pagamentoTrue,
         handleClickAddPedido
       }}
