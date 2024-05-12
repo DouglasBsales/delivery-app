@@ -4,13 +4,13 @@ import pedidoFavoritoVazio from "../../assets/pedidoFavoritoVazio.png";
 const FavoritosVazio = () => {
   return (
     <div>
-      <div className="flex flex-col items-center">
-        <div className="pt-[60px]">
+      <div className="flex flex-col items-center ">
+        <div className="pt-[70px] pl-5">
           <Image
             src={pedidoFavoritoVazio}
             alt="photo"
-            width={250}
-            height={250}
+            width={300}
+            height={300}
           />
         </div>
         <div className="w-[270px] flex flex-col items-center pt-5">

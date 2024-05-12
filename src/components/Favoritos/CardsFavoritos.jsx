@@ -1,17 +1,29 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { HomeContext } from "@/Context/Home/HomeContext";
+import { useContext } from "react";
+
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+import { ProductContext } from "@/Context/Product/ProductContext";
 
-const CardsFavoritos = ({
-  arrayFavoritos,
-  clickPageProduct,
-  setArrayFavoritos,
-}) => {
+const CardsFavoritos = () => {
+  const { items, arrayFavoritos, setArrayFavoritos, setProductExib, setValue, productExib} = useContext(HomeContext);
+  const { setCountItem } = useContext(ProductContext);
+
   const removeFavorito = (id) => {
     const updateFavoritos = arrayFavoritos.filter(
       (product) => product.id !== id
     );
     setArrayFavoritos(updateFavoritos);
+  };
+
+  const exibirProduct = (id) => {
+    const selected = items.find((product) => product.id === id);
+    setValue("");
+    setProductExib(selected);
+    setCountItem(1);
   };
 
   return (
@@ -24,12 +36,13 @@ const CardsFavoritos = ({
                 className="w-full flex justify-end "
                 onClick={() => removeFavorito(product.id)}
               >
-               <FontAwesomeIcon icon={faTrash} className="text-blackOpacity"/>
+                <FontAwesomeIcon icon={faTrash} className="text-blackOpacity" />
               </button>
             </div>
-            <button
+            <Link
+              href="/Product"
               className="w-[326px] flex flex-col bg-white rounded-[8px] pl-[16px] outline-none"
-              onClick={() => clickPageProduct(product.id)}
+              onClick={() => exibirProduct(product.id)}
             >
               <div className="flex justify-between">
                 <div className="w-[305px] justify-end flex absolute pt-[5px]"></div>
@@ -62,7 +75,7 @@ const CardsFavoritos = ({
                   />
                 </div>
               </div>
-            </button>
+            </Link>
           </div>
         </div>
       ))}

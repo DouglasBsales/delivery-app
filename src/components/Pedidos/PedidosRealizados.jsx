@@ -1,7 +1,11 @@
 import Image from "next/image";
-import React from "react";
 
-const PedidosRealizados = ({ pedidosRealizados }) => {
+import { useContext } from "react";
+import { ProductContext } from "@/Context/Product/ProductContext";
+
+const PedidosRealizados = () => {
+  const { arrayPedidosRealizados } = useContext(ProductContext);
+
   const calcularTotalPedido = (pedido) => {
     return pedido.reduce((total, product) => {
       return total + product.quantity * product.price;
@@ -9,16 +13,16 @@ const PedidosRealizados = ({ pedidosRealizados }) => {
   };
 
   return (
-    <div className="pt-[50px]">
+    <div className="pt-[50px] pb-[70px]">
       <div>
         <div>
-          {pedidosRealizados.map((order, index) => (
+          {arrayPedidosRealizados.map((order, index) => (
             <div
               key={order.id}
               className="w-[320px] bg-white rounded-lg mb-5 px-4"
             >
               <div className="pb-[26px]">
-                {pedidosRealizados.length < 10 ? (
+                {arrayPedidosRealizados.length < 10 ? (
                   <p className="font-semibold text-xl text-blackOpacity pt-2">
                     Pedido #0{index + 1}
                   </p>
@@ -40,7 +44,7 @@ const PedidosRealizados = ({ pedidosRealizados }) => {
                           height={64}
                         />
                       </div>
-                      <div className="w-full flex justify-between">
+                      <div className="w-full flex justify-between text-xs">
                         <div className="flex gap-1 text-blackOpacity">
                           <p>{product.quantity}x</p>
                           <p className="">{product.name}</p>
@@ -60,7 +64,9 @@ const PedidosRealizados = ({ pedidosRealizados }) => {
               ))}
 
               <div className="flex justify-between pt-5">
-                <p className="font-semibold text-blackOpacity">Forma de pagamento:</p>
+                <p className="font-semibold text-blackOpacity">
+                  Forma de pagamento:
+                </p>
                 <p>{order[0].payment}</p>
               </div>
               <div className="flex justify-between pt-4 pb-5">

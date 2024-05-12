@@ -1,13 +1,13 @@
+import { HomeContext } from "@/Context/Home/HomeContext";
+import { ProductContext } from "@/Context/Product/ProductContext";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
-const ListaCarrinho = ({
-  item,
-  arrayCarrinho,
-  setArrayCarrinho,
-  valuePayment,
-}) => {
+const ListaCarrinho = ({ item }) => {
+  const { arrayCarrinho, setArrayCarrinho, valuePayment } =
+    useContext(ProductContext);
+
   const [countItem, setCountItem] = useState(item.quantity);
 
   const handleClickAddItem = () => {
@@ -83,7 +83,8 @@ const ListaCarrinho = ({
               </div>
               <div>
                 <p className="text-xs text-redPrimary font-semibold">
-                  R$ {(item.price * item.quantity).toFixed(2).replace(".", ",")}
+                  R${" "}
+                  {(item.price * item.quantity).toFixed(2).replace(".", ",")}
                 </p>
               </div>
             </div>

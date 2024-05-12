@@ -1,35 +1,37 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+
+import { useState, useEffect, useContext } from "react";
+import { HomeContext } from "@/Context/Home/HomeContext";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
+import { ProductContext } from "@/Context/Product/ProductContext";
 
-const CardsProducts = ({
-  name,
-  portion,
-  ml,
-  category,
-  photo,
-  price,
-  descriptionCard,
-  id,
-  clickPageProduct,
-  arrayFavoritos,
-  setArrayFavoritos,
-  items,
-}) => {
+const CardsProducts = ({ item }) => {
+  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } =
+    useContext(HomeContext);
+  const { setCountItem } = useContext(ProductContext);
+
   const [isFavorit, setIsFavorit] = useState(false);
+
+  const exibirProduct = (id) => {
+    const selected = items.find((product) => product.id === id);
+    setValue("");
+    setProductExib(selected);
+    setCountItem(1);
+  };
 
   // Verifica se o produto atual está nos favoritos ao carregar a página
   useEffect(() => {
     if (arrayFavoritos && arrayFavoritos.length > 0) {
       const isProductInFavoritos = arrayFavoritos.some(
-        (product) => product.id === id
+        (product) => product.id === item.id
       );
       setIsFavorit(isProductInFavoritos);
     }
-  }, [arrayFavoritos, id]);
-
+  }, [arrayFavoritos, item.id]);
 
   const toggleFavoritos = (id) => {
     setIsFavorit(!isFavorit);
@@ -50,6 +52,7 @@ const CardsProducts = ({
 
     const selected = items.find((product) => product.id === id);
     setArrayFavoritos([...arrayFavoritos, selected]);
+    
   };
 
   return (
@@ -57,7 +60,7 @@ const CardsProducts = ({
       <div>
         <div className="w-[315px] justify-end flex absolute pt-[10px]">
           <button
-            onClick={() => toggleFavoritos(id)}
+            onClick={() => toggleFavoritos(item.id)}
             className="cursor-pointer"
           >
             {isFavorit ? (
@@ -73,36 +76,37 @@ const CardsProducts = ({
             )}
           </button>
         </div>
-        <button
+        <Link
+          href="/Product"
           className="w-[326px] flex flex-col bg-white rounded-[8px] pl-[16px]"
-          onClick={() => clickPageProduct(id)}
+          onClick={() => exibirProduct(item.id)}
         >
           <div className="flex justify-between">
             <div className="w-[160px] pt-[21px] text-start">
               <p className="text-xs text-blackOpacity font-semibold">
-                {category}
+                {item.category}
               </p>
               <p className="text-[18px] text-blackPrimary font-semibold relative top-[-3px]">
-                {name}
+                {item.name}
               </p>
               <p className="text-redPrimary text-xs font-semibold relative bottom-2">
-                {portion}
+                {item.portion}
               </p>
               <p className="text-redPrimary text-xs font-semibold relative bottom-2">
-                {ml}
+                {item.ml}
               </p>
               <p className="text-[10px] font-semibold text-blackOpacity">
-                {descriptionCard}...
+                {item.descriptionCard}...
               </p>
               <p className="text-redPrimary font-bold text-[18px] pb-3 pt-2">
-                R$ {price.toFixed(2).replace(".", ",")}
+                R$ {item.price.toFixed(2).replace(".", ",")}
               </p>
             </div>
             <div className="flex items-center">
-              <Image src={photo} alt="imagem" width={134} height={135} />
+              <Image src={item.photo} alt="imagem" width={134} height={135} />
             </div>
           </div>
-        </button>
+        </Link>
       </div>
     </div>
   );

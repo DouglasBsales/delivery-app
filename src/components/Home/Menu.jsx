@@ -1,53 +1,42 @@
-import { Home, ShoppingCart, Heart, ClipboardList } from "lucide-react";
+"use client";
+
 import Link from "next/link";
 
-const Menu = ({ home, pageCarrinho, pagePedido, favoritosPage, arrayProductCarrinho }) => {
-  const pageHome = () => {
-    pageCarrinho(false);
-    home(true);
-  };
+import { useContext } from "react";
+import { ProductContext } from "@/Context/Product/ProductContext";
 
-  const pageCarrinhoProduct = () => {
-    pageCarrinho(true);
-    home(false);
-  };
+import { Home, ShoppingCart, Heart, ClipboardList } from "lucide-react";
 
-  const isPagePedido = () => {
-    pagePedido(true);
-    home(false);
-  };
-
-  const isPageFavoritos = ()=>{
-    favoritosPage(true)
-    home(false)
-  }
-
+const Menu = () => {
+  const { arrayCarrinho } = useContext(ProductContext);
 
   return (
     <div className="fixed bottom-0">
       <div className="w-[393px] h-[65px] flex items-center justify-around bg-redPrimary rounded-t-md pt-2">
-        <button onClick={pageHome}>
+        <Link href="/Home">
           <Home className="text-white" size={30} />
-        </button>
+        </Link>
         <div className="flex flex-col relative">
-          <button onClick={pageCarrinhoProduct}>
-          <div className="absolute top-[-12px] left-5 ">
-            <p className=" text-white text-xs">
-              {arrayProductCarrinho.reduce(
-                (total, produto) => total + produto.quantity,
-                0
-              )}
-            </p>
-          </div>
+          <Link href="/Carrinho">
+            <div className="absolute top-[-10px] left-4 ">
+              <div className="w-[25px] h-[25px] flex justify-center itens-end  bg-white rounded-full">
+                <p className="text-redPrimary font-semibold">
+                  {arrayCarrinho.reduce(
+                    (total, produto) => total + produto.quantity,
+                    0
+                  )}
+                </p>
+              </div>
+            </div>
             <ShoppingCart className="text-white" size={30} />
-          </button>
+          </Link>
         </div>
-        <button onClick={isPageFavoritos}>
+        <Link href="/Favoritos">
           <Heart className="text-white" size={30} />
-        </button>
-        <button onClick={isPagePedido}>
+        </Link>
+        <Link href="/Pedidos">
           <ClipboardList className="text-white" size={30} />
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,16 +1,14 @@
+import { ProductContext } from "@/Context/Product/ProductContext";
+import { useContext } from "react";
 import { CircleCheckBig } from "lucide-react";
+import Link from "next/link";
 
-const ModalPedidoRealizado = ({
-  modalPedido,
-  setIsPageCarrinho,
-  setIsPagePedido,
-  setArrayCarrinho
-}) => {
-  const handleClickOpenPedido = () => {
-    modalPedido(false);
-    setIsPageCarrinho(false);
-    setIsPagePedido(true);
-    setArrayCarrinho([])
+const ModalPedidoRealizado = () => {
+  const { setArrayCarrinho, setModalPedido } = useContext(ProductContext);
+
+  const closeModal = () => {
+    setArrayCarrinho([]);
+    setModalPedido(false);
   };
 
   return (
@@ -25,8 +23,13 @@ const ModalPedidoRealizado = ({
           </div>
         </div>
         <div className="flex justify-center pt-4 pb-2">
-          <button className="w-[200px] flex justify-center items-center bg-blackPrimary rounded-[30px] py-1" onClick={handleClickOpenPedido}>
-            <p className="text-white font-semibold">Visualizar pedido</p>
+          <button
+            className="w-[200px] flex justify-center items-center bg-blackPrimary rounded-[30px] py-1"
+            onClick={closeModal}
+          >
+            <Link href="/Pedidos" className="text-white font-semibold">
+              Visualizar pedido
+            </Link>
           </button>
         </div>
       </div>

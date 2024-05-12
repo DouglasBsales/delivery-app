@@ -1,50 +1,23 @@
-import { ChevronLeft, Minus, Plus } from "lucide-react";
+"use client";
+
 import Image from "next/image";
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { Bounce } from "react-toastify";
+
+import { useContext } from "react";
+import { HomeContext } from "@/Context/Home/HomeContext";
+import { ProductContext } from "@/Context/Product/ProductContext";
+
+import {Minus, Plus } from "lucide-react";
+
+import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ProductPage = ({
-  setIsHome,
-  setIsPageProduct,
-  setFilteredItems,
-  photo,
-  name,
-  category,
-  price,
-  description,
-  portion,
-  ml,
-  valuePayment,
-  arrayCarrinho,
-  setArrayCarrinho,
-  setAllItens,
-}) => {
-  const returnPageHome = () => {
-    setIsHome(true);
-    setIsPageProduct(false);
-    setAllItens(true);
-    setFilteredItems([]);
-  };
-
-  const [countItem, setCountItem] = useState(1);
-
-  const handleClickAddItem = () => {
-    setCountItem((prevNumber) => prevNumber + 1);
-  };
-
-  const handleClickMinusItem = () => {
-    if (countItem === 1) {
-      return;
-    } else {
-      setCountItem((prevNumber) => prevNumber - 1);
-    }
-  };
+export default function Product() {
+  const { productExib } = useContext(HomeContext);
+  const { countItem, handleClickAddItem, handleClickMinusItem, arrayCarrinho, setArrayCarrinho, valuePayment } = useContext(ProductContext);
 
   const handleAddToCart = () => {
     const existingItemIndex = arrayCarrinho.findIndex(
-      (item) => item.name === name
+      (item) => item.name === productExib.name
     );
 
     if (existingItemIndex !== -1) {
@@ -59,12 +32,12 @@ const ProductPage = ({
       setArrayCarrinho([
         ...arrayCarrinho,
         {
-          photo,
-          name,
-          category,
-          price,
-          description,
-          portion,
+          photo: productExib.photo,
+          name: productExib.name,
+          category: productExib.category,
+          price: productExib.price,
+          description: productExib.description,
+          portion: productExib.portion,
           quantity: countItem,
           payment: valuePayment,
         },
@@ -86,41 +59,40 @@ const ProductPage = ({
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4">
-      <div className="flex-shrink-0 w-full h-[408px] bg-redPrimary rounded-b-[200px]">
+    <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 ">
+      <div className="flex-shrink-0 w-full h-[350px] bg-redPrimary rounded-b-[200px]">
         <div className="mx-auto py-9 px-[33px]">
-          <div>
-            <button
-              className="w-12 h-12 flex justify-center items-center bg-white rounded-full"
-              onClick={returnPageHome}
-            >
-              <ChevronLeft size={24} />
-            </button>
-          </div>
-          <div className="flex justify-center items-center pt-[130px]">
-            <Image src={photo} alt="item" width={300} height={300} />
+          <div className="flex justify-center items-center pt-[120px]">
+            <Image
+              src={productExib.photo}
+              alt="item"
+              width={300}
+              height={300}
+            />
           </div>
         </div>
       </div>
-      <div className="flex-1 max-w-[393px] px-[33px]">
+      <div className="w-[393px] flex flex-col px-[33px] mx-auto pt-[37px] pb-20">
         <div className="flex flex-col items-start h-full">
           <div className="w-full flex justify-between pt-[100px]">
             <p className="w-[200px] text-xl font-bold text-blackPrimary">
-              {name}
+              {productExib.name}
             </p>
             <p className="text-xl font-bold text-redPrimary">
-              R$ {price.toFixed(2).replace(".", ",")}
+              R$ {productExib.price.toFixed(2).replace(".", ",")}
             </p>
           </div>
           <div>
-            <p className="text-redPrimary font-semibold">{portion}</p>
+            <p className="text-redPrimary font-semibold">
+              {productExib.gramas}
+            </p>
           </div>
           <div>
-            <p className="text-redPrimary font-semibold">{ml}</p>
+            <p className="text-redPrimary font-semibold">{productExib.ml}</p>
           </div>
           <div>
             <p className="text-xs font-semibold text-blackOpacity">
-              {category}
+              {productExib.category}
             </p>
           </div>
           <div className="w-[100px] h-[37px] flex items-center justify-center  rounded-[30px] bg-redPrimary mt-5">
@@ -128,7 +100,7 @@ const ProductPage = ({
           </div>
           <div className="pt-5">
             <p className="font-semibold text-blackOpacity text-sm">
-              {description}
+              {productExib.description}
             </p>
           </div>
           <div className="flex justify-between pt-[70px] gap-3">
@@ -177,6 +149,4 @@ const ProductPage = ({
       </div>
     </div>
   );
-};
-
-export default ProductPage;
+}
