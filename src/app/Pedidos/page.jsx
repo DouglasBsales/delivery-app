@@ -19,7 +19,7 @@ export default function Pedidos() {
           </div>
         </div>
       </div>
-      <div className="w-[393px] flex flex-col px-[33px] mx-auto">
+      <div className="flex-1 max-w-[393px] mx-auto px-[33px] ">
         {arrayPedidosRealizados.length === 0 ? (
           <PedidoVazio />
         ) : (
