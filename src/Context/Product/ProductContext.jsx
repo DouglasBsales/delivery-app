@@ -65,7 +65,8 @@ export default function ProductContextProvider({ children }) {
         modalPedido,
         setModalPedido,
         pagamentoTrue,
-        handleClickAddPedido
+        handleClickAddPedido,
+        arrayPedidosRealizados
       }}
     >
       {children}
