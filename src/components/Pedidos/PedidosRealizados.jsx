@@ -19,7 +19,7 @@ const PedidosRealizados = () => {
           {arrayPedidosRealizados.map((order, index) => (
             <div
               key={order.id}
-              className="w-[320px] bg-white rounded-lg mb-5 px-4"
+              className="w-[290px] bg-white rounded-lg mb-5 px-4"
             >
               <div className="pb-[26px]">
                 {arrayPedidosRealizados.length < 10 ? (

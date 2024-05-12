@@ -41,7 +41,7 @@ const CardsFavoritos = () => {
             </div>
             <Link
               href="/Product"
-              className="w-[326px] flex flex-col bg-white rounded-[8px] pl-[16px] outline-none"
+              className="w-[290px] flex flex-col bg-white rounded-[8px] pl-[16px] outline-none"
               onClick={() => exibirProduct(product.id)}
             >
               <div className="flex justify-between">
