@@ -3,7 +3,7 @@ import { HomeContext } from "@/Context/Home/HomeContext";
 import { Search, SlidersHorizontal } from "lucide-react";
 
 const SearchItens = ({ setAllItens }) => {
-  const { value, setValue, items, setFilteredItems } = useContext(HomeContext);
+  const { value, setValue, items, setFilteredItems, setCategoryItem } = useContext(HomeContext);
 
   const handleClickFilterItem = () => {
     if (value.trim() === "") {
@@ -22,6 +22,7 @@ const SearchItens = ({ setAllItens }) => {
     setValue("");
     setFilteredItems(filteredItemsSearch);
     setAllItens(false);
+    setCategoryItem(null)
   };
 
   return (
