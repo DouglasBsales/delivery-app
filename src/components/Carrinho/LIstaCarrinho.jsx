@@ -64,7 +64,7 @@ const ListaCarrinho = ({ item }) => {
 
   return (
     <div className="w-full flex justify-between">
-      <div className="w-[290px] pt-[21px] text-start">
+      <div className="w-[326px] pt-[21px] text-start">
         <div className="flex items-center ">
           <div>
             <Image src={item.photo} alt="item" width={95} height={95} />
