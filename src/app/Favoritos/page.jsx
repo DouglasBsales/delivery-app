@@ -17,7 +17,7 @@ export default function Favoritos() {
           </div>
         </div>
       </div>
-      <div className="flex-1 max-w-[393px] mx-auto px-[33px] ">
+      <div className="flex-1 max-w-[393px] mx-auto px-[33px]">
         {arrayFavoritos.length === 0 ? <FavoritosVazio /> : <CardsFavoritos />}
       </div>
     </div>
