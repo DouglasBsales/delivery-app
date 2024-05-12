@@ -62,7 +62,7 @@ export default function Product() {
 
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 ">
+    <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 overflow-x-hidden">
       <div className="flex-shrink-0 w-full h-[350px] bg-redPrimary rounded-b-[200px]">
         <div className="mx-auto py-9 px-[33px]">
           <div className="flex justify-center items-center pt-[120px]">

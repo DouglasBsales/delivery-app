@@ -10,7 +10,7 @@ export default function Carrinho() {
   const { arrayCarrinho } = useContext(ProductContext);
 
   return (
-    <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5]">
+    <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5] overflow-x-hidden">
       <div className="flex-shrink-0 w-full bg-redPrimary">
         <div className="max-w-[393px] mx-auto px-[33px] py-9">
           <div className="h-[100px] flex justify-center items-end">
