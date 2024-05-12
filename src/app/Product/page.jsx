@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";""
 
 import { useContext } from "react";
 import { HomeContext } from "@/Context/Home/HomeContext";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
-import { ChevronLeft, Minus, Plus } from "lucide-react";
+import {Minus, Plus } from "lucide-react";
 
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
