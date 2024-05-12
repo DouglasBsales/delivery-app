@@ -23,7 +23,7 @@ export default function HomeContextProvider({ children }) {
   const [value, setValue] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
 
-  const [productExib, setProductExib] = useState(null);
+  const [productExib, setProductExib] = useState();
 
   return (
     <HomeContext.Provider
