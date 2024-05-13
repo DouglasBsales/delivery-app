@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 
-import { useContext} from "react";
+import { useContext } from "react";
 import { ProductContext } from "@/Context/Product/ProductContext";
+import { HomeContext } from "@/Context/Home/HomeContext";
 
 import ListaCarrinho from "./ListaCarrinho";
 import ModalPedidoRealizado from "./ModalPedidoRealizado";
@@ -15,8 +16,10 @@ const CarrinhoAdd = () => {
     setValuePayment,
     modalPedido,
     pagamentoTrue,
-    handleClickAddPedido
+    handleClickAddPedido,
   } = useContext(ProductContext);
+
+  const { setIsPageSelected } = useContext(HomeContext);
 
   return (
     <div>
@@ -33,7 +36,11 @@ const CarrinhoAdd = () => {
         ))}
       </div>
       <div className="flex justify-center pt-4">
-        <Link href="/Home" className="py-2 px-4 bg-blackPrimary rounded-md">
+        <Link
+          href="/Home"
+          className="py-2 px-4 bg-blackPrimary rounded-md"
+          onClick={() => setIsPageSelected("Home")}
+        >
           <p className="text-white font-semibold text-sm">
             Adicionar mais itens
           </p>
