@@ -5,10 +5,10 @@ const PedidoVazio = () => {
   return (
     <div className="flex flex-col mx-auto">
       <div className="flex justify-center pt-[50px] ">
-        <Image src={pedidoNaoRealizado} alt="imagem" width={250} height={250} />
+        <Image src={pedidoNaoRealizado} alt="imagem" width={200} height={200} />
       </div>
       <div className="w-[270px] flex flex-col items-center justify-center pt-5">
-        <p className="text-2xl font-ligther text-center">
+        <p className="text-xl font-ligther text-center">
           Você ainda não pediu
         </p>
         <p className="text-blackOpacity text-center">

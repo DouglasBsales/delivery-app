@@ -9,12 +9,12 @@ const FavoritosVazio = () => {
           <Image
             src={pedidoFavoritoVazio}
             alt="photo"
-            width={260}
-            height={260}
+            width={200}
+            height={200}
           />
         </div>
         <div className="w-[270px] flex flex-col items-center pt-5">
-          <p className="text-2xl font-ligther text-center">
+          <p className="text-xl font-ligther text-center">
             Você não possui itens favoritos
           </p>
           <p className="text-blackOpacity text-center">
