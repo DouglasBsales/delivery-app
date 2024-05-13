@@ -5,12 +5,12 @@ const FavoritosVazio = () => {
   return (
     <div>
       <div className="flex flex-col items-center ">
-        <div className="pt-[70px] pl-5">
+        <div className="pt-[30px] pl-4">
           <Image
             src={pedidoFavoritoVazio}
             alt="photo"
-            width={300}
-            height={300}
+            width={260}
+            height={260}
           />
         </div>
         <div className="w-[270px] flex flex-col items-center pt-5">
