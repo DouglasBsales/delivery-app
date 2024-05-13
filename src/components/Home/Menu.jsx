@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
 import { Home, ShoppingCart, Heart, ClipboardList } from "lucide-react";
+import { HomeContext } from "@/Context/Home/HomeContext";
 
 const Menu = () => {
   const { arrayCarrinho } = useContext(ProductContext);
-  const [isPageSelected, setIsPageSelected] = useState("Home");
+  const { isPageSelected, setIsPageSelected } = useContext(HomeContext);
 
   return (
     <div className="fixed bottom-0">
