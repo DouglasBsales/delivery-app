@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { useContext } from "react";
 import { HomeContext } from "@/Context/Home/HomeContext";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
 import {Minus, Plus } from "lucide-react";
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -147,6 +150,12 @@ export default function Product() {
               theme="light"
               transition={Bounce}
             />
+          </div>
+          <div className="w-full flex justify-center pt-7">
+          <Link href="/Home" className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faCircleArrowLeft} className="text-redPrimary size-9"/>
+            <p className="text-blackPrimary font-semibold">Voltar</p>
+          </Link>
           </div>
         </div>
       </div>
