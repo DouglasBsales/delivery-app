@@ -24,6 +24,7 @@ export default function HomeContextProvider({ children }) {
   const [filteredItems, setFilteredItems] = useState([]);
 
   const [productExib, setProductExib] = useState();
+  const [isPageSelected, setIsPageSelected] = useState("Home");
 
   return (
     <HomeContext.Provider
@@ -44,7 +45,9 @@ export default function HomeContextProvider({ children }) {
         setProductExib,
         arrayPedidosRealizados,
         setArrayPedidosRealizados,
-        loading
+        loading,
+        isPageSelected,
+        setIsPageSelected
       }}
     >
       {children}
