@@ -27,7 +27,7 @@ const CardsFavoritos = () => {
   };
 
   return (
-    <div className="flex flex-col pt-8">
+    <div className="flex flex-col pt-8 pb-[100px]">
       {arrayFavoritos.map((product, index) => (
         <div key={product.id} className={`mb-3 ${index !== 0 ? "mt-3" : ""}`}>
           <div>
