@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { HomeContext } from "@/Context/Home/HomeContext";
 import { ProductContext } from "@/Context/Product/ProductContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { CircleCheckBig } from "lucide-react";
 
@@ -11,6 +11,8 @@ const ModalPedidoRealizado = () => {
   const { setIsPageSelected } = useContext(HomeContext);
 
   const closeModal = () => {
+    localStorage.setItem("itens_carrinho", JSON.stringify([]));
+    
     setArrayCarrinho([]);
     setModalPedido(false);
   };
@@ -31,7 +33,11 @@ const ModalPedidoRealizado = () => {
             className="w-[200px] flex justify-center items-center bg-blackPrimary rounded-[30px] py-1"
             onClick={closeModal}
           >
-            <Link href="/Pedidos" className="text-white font-semibold" onClick={()=> setIsPageSelected("Pedidos")}>
+            <Link
+              href="/Pedidos"
+              className="text-white font-semibold"
+              onClick={() => setIsPageSelected("Pedidos")}
+            >
               Visualizar pedido
             </Link>
           </button>
