@@ -6,17 +6,40 @@ export const ProductContext = createContext();
 
 export default function ProductContextProvider({ children }) {
   const [countItem, setCountItem] = useState(1);
-  const [arrayCarrinho, setArrayCarrinho] = useState([]);
+
+  const getItensCarrinho = () => {
+    let list = localStorage.getItem("itens_carrinho");
+
+    if (list) {
+      return JSON.parse(localStorage.getItem("itens_carrinho"));
+    } else {
+      return [];
+    }
+  };
+
+  const [arrayCarrinho, setArrayCarrinho] = useState(getItensCarrinho());
   const [valuePayment, setValuePayment] = useState("0");
 
   const [arrayPedidos, setArrayPedidos] = useState([]);
-  const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
-  const handleClickAddItem = () => { // funcao usada na page Product
+  const getPedidosRealizados = () => {
+    let listPedidos = localStorage.getItem("pedidos_realizados");
+
+    if (listPedidos) {
+      return JSON.parse(listPedidos);
+    } else {
+      return [];
+    }
+  };
+  const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState(getPedidosRealizados());
+
+  const handleClickAddItem = () => {
+    // funcao usada na page Product
     setCountItem((prevNumber) => prevNumber + 1);
   };
 
-  const handleClickMinusItem = () => { // funcao usada na page Product
+  const handleClickMinusItem = () => {
+    // funcao usada na page Product
     if (countItem === 1) {
       return;
     } else {
@@ -24,10 +47,10 @@ export default function ProductContextProvider({ children }) {
     }
   };
 
-
   const [modalPedido, setModalPedido] = useState(false);
   const [pagamentoTrue, setPagamentotrue] = useState(false);
-  const handleClickAddPedido = () => { // funcao usada na page Product
+  const handleClickAddPedido = () => {
+    // funcao usada na page Product
     if (valuePayment === "0") {
       setPagamentotrue(true);
       alert("Selecione uma forma de pagamento");
@@ -47,8 +70,8 @@ export default function ProductContextProvider({ children }) {
     ]);
 
     setModalPedido(true);
-    setPagamentotrue(false)
-    setValuePayment("0")
+    setPagamentotrue(false);
+    setValuePayment("0");
   };
 
   return (
@@ -66,7 +89,8 @@ export default function ProductContextProvider({ children }) {
         setModalPedido,
         pagamentoTrue,
         handleClickAddPedido,
-        arrayPedidosRealizados
+        arrayPedidosRealizados,
+        setArrayPedidosRealizados,
       }}
     >
       {children}
