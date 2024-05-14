@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ProductContext } from "@/Context/Product/ProductContext";
 import { HomeContext } from "@/Context/Home/HomeContext";
 
@@ -12,6 +12,7 @@ import ModalPedidoRealizado from "./ModalPedidoRealizado";
 const CarrinhoAdd = () => {
   const {
     arrayCarrinho,
+    setArrayCarrinho,
     valuePayment,
     setValuePayment,
     modalPedido,
