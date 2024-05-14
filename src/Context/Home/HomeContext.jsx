@@ -17,7 +17,16 @@ export default function HomeContextProvider({ children }) {
   const [categoryItem, setCategoryItem] = useState(null);
   const [isSelected, setIsSelected] = useState("Todos");
 
-  const [arrayFavoritos, setArrayFavoritos] = useState([]);
+  const itemsFavoritos = () => {
+    const favoritos = localStorage.getItem("favoritos");
+    if (favoritos) {
+      return JSON.parse(favoritos);
+    } else {
+      [];
+    }
+  };
+
+  const [arrayFavoritos, setArrayFavoritos] = useState(itemsFavoritos());
   const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
 
   const [value, setValue] = useState("");
@@ -47,7 +56,7 @@ export default function HomeContextProvider({ children }) {
         setArrayPedidosRealizados,
         loading,
         isPageSelected,
-        setIsPageSelected
+        setIsPageSelected,
       }}
     >
       {children}
