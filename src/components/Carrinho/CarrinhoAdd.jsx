@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ProductContext } from "@/Context/Product/ProductContext";
 import { HomeContext } from "@/Context/Home/HomeContext";
 
@@ -18,7 +18,7 @@ const CarrinhoAdd = () => {
     modalPedido,
     pagamentoTrue,
     handleClickAddPedido,
-    modalPagamento
+    modalPagamento,
   } = useContext(ProductContext);
 
   const { setIsPageSelected } = useContext(HomeContext);
