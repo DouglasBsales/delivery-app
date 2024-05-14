@@ -8,16 +8,17 @@ import { HomeContext } from "@/Context/Home/HomeContext";
 
 import ListaCarrinho from "./ListaCarrinho";
 import ModalPedidoRealizado from "./ModalPedidoRealizado";
+import ModalPagamento from "./ModalPagamento";
 
 const CarrinhoAdd = () => {
   const {
     arrayCarrinho,
-    setArrayCarrinho,
     valuePayment,
     setValuePayment,
     modalPedido,
     pagamentoTrue,
     handleClickAddPedido,
+    modalPagamento
   } = useContext(ProductContext);
 
   const { setIsPageSelected } = useContext(HomeContext);
@@ -99,6 +100,7 @@ const CarrinhoAdd = () => {
           <p className="text-white font-semibold text-xl">Realizar pedido</p>
         </button>
         {modalPedido && <ModalPedidoRealizado />}
+        {modalPagamento && <ModalPagamento />}
       </div>
     </div>
   );
