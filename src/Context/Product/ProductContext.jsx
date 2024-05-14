@@ -19,6 +19,7 @@ export default function ProductContextProvider({ children }) {
 
   const [arrayCarrinho, setArrayCarrinho] = useState(getItensCarrinho());
   const [valuePayment, setValuePayment] = useState("0");
+  const [modalPagamento, setModalPagamento] = useState(false)
 
   const [arrayPedidos, setArrayPedidos] = useState([]);
 
@@ -53,7 +54,7 @@ export default function ProductContextProvider({ children }) {
     // funcao usada na page Product
     if (valuePayment === "0") {
       setPagamentotrue(true);
-      alert("Selecione uma forma de pagamento");
+      setModalPagamento(true)
       return;
     }
 
@@ -91,6 +92,8 @@ export default function ProductContextProvider({ children }) {
         handleClickAddPedido,
         arrayPedidosRealizados,
         setArrayPedidosRealizados,
+        modalPagamento, 
+        setModalPagamento
       }}
     >
       {children}
