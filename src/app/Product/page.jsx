@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { HomeContext } from "@/Context/Home/HomeContext";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
@@ -60,6 +60,18 @@ export default function Product() {
       transition: Bounce,
     });
   };
+
+
+  useEffect(() => {
+    if (localStorage.getItem("itens_carrinho") !== null) {
+      setArrayCarrinho(JSON.parse(localStorage.getItem("itens_carrinho")));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("itens_carrinho", JSON.stringify(arrayCarrinho));
+  }, [arrayCarrinho]);
+
 
   if (!productExib) return null;
 

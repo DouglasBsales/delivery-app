@@ -16,6 +16,14 @@ const CardsProducts = ({ item }) => {
 
   const [isFavorit, setIsFavorit] = useState(false);
 
+  useEffect(() => {
+    localStorage.setItem("favoritos", JSON.stringify(arrayFavoritos));
+  }, [arrayFavoritos]);
+
+  useEffect(() => {
+    localStorage.getItem("favoritos",JSON.parse(localStorage.getItem("favoritos")));
+  }, []);
+
   const exibirProduct = (id) => {
     const selected = items.find((product) => product.id === id);
     setValue("");
@@ -26,7 +34,10 @@ const CardsProducts = ({ item }) => {
   // Verifica se o produto atual está nos favoritos ao carregar a página
   useEffect(() => {
     if (arrayFavoritos && arrayFavoritos.length > 0) {
-      const isProductInFavoritos = arrayFavoritos.some(
+
+      const itensFavoritos = JSON.parse(localStorage.getItem("favoritos"))
+
+      const isProductInFavoritos = itensFavoritos.some(
         (product) => product.id === item.id
       );
       setIsFavorit(isProductInFavoritos);
@@ -52,7 +63,6 @@ const CardsProducts = ({ item }) => {
 
     const selected = items.find((product) => product.id === id);
     setArrayFavoritos([...arrayFavoritos, selected]);
-    
   };
 
   return (

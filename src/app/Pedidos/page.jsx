@@ -1,13 +1,26 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
 import PedidoVazio from "@/components/Pedidos/PedidoVazio";
 import PedidosRealizados from "@/components/Pedidos/PedidosRealizados";
 
 export default function Pedidos() {
-  const { arrayPedidosRealizados } = useContext(ProductContext);
+  const { arrayPedidosRealizados, setArrayPedidosRealizados } =
+    useContext(ProductContext);
+
+  useEffect(() => {
+    if (localStorage.getItem("pedidos_realizados") !== null) {
+      setArrayPedidosRealizados(
+        JSON.parse(localStorage.getItem("pedidos_realizados"))
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("pedidos_realizados",JSON.stringify(arrayPedidosRealizados));
+  }, [arrayPedidosRealizados]);
 
   return (
     <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5] overflow-x-hidden">
