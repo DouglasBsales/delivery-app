@@ -13,23 +13,19 @@ export default function Pedidos() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storage = window.localStorage.getItem("pedidos_realizados");
-
-      if (storage !== null) {
-        setArrayPedidosRealizados(
-          JSON.parse(localStorage.getItem("pedidos_realizados"))
-        );
+      if (storage) {
+        setArrayPedidosRealizados(JSON.parse(storage));
       }
     }
   }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.localStorage.setItem(
-        "pedidos_realizados",
-        JSON.stringify(arrayPedidosRealizados)
-      );
+      window.localStorage.setItem("pedidos_realizados", JSON.stringify(arrayPedidosRealizados));
     }
   }, [arrayPedidosRealizados]);
+
+  console.log(arrayPedidosRealizados)
 
   return (
     <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5] overflow-x-hidden">

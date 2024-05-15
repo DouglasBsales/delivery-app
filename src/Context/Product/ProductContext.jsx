@@ -25,8 +25,6 @@ export default function ProductContextProvider({ children }) {
   const [valuePayment, setValuePayment] = useState("0");
   const [modalPagamento, setModalPagamento] = useState(false);
 
-  const [arrayPedidos, setArrayPedidos] = useState([]);
-
   const getPedidosRealizados = () => {
     let listPedidos = null;
 
@@ -74,11 +72,10 @@ export default function ProductContextProvider({ children }) {
       payment: valuePayment,
     }));
 
-    setArrayPedidos([...arrayPedidosRealizados, carrinhoComPagamento]);
-    setArrayPedidosRealizados([
-      ...arrayPedidosRealizados,
-      carrinhoComPagamento,
-    ]);
+    const novosPedidos = [...arrayPedidosRealizados, carrinhoComPagamento];
+    localStorage.setItem("pedidos_realizados", JSON.stringify(novosPedidos));
+    setArrayPedidosRealizados(novosPedidos);
+    console.log(arrayPedidosRealizados);
 
     setModalPedido(true);
     setPagamentotrue(false);
