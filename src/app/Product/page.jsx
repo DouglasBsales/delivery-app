@@ -14,7 +14,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export default function Product() {
   const { productExib } = useContext(HomeContext);
   const {
@@ -72,22 +71,18 @@ export default function Product() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedItems = window.localStorage.getItem("itens_carrinho");
-      if (storedItems !== null) {
+      if (storedItems) {
         setArrayCarrinho(JSON.parse(storedItems));
       }
     }
   }, []);
-  
+
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.localStorage.setItem(
-        "itens_carrinho",
-        JSON.stringify(arrayCarrinho)
-      );
-  
-      console.log("funcionando normal");
+      window.localStorage.setItem("itens_carrinho",JSON.stringify(arrayCarrinho));
     }
   }, [arrayCarrinho]);
+  
   if (!productExib) return null;
 
   return (
