@@ -8,7 +8,11 @@ export default function ProductContextProvider({ children }) {
   const [countItem, setCountItem] = useState(1);
 
   const getItensCarrinho = () => {
-    let list = window.localStorage.getItem("itens_carrinho");
+    let list = null;
+
+    if (typeof window !== "undefined") {
+      list = window.localStorage.getItem("itens_carrinho");
+    }
 
     if (list) {
       return JSON.parse(list);
@@ -24,7 +28,11 @@ export default function ProductContextProvider({ children }) {
   const [arrayPedidos, setArrayPedidos] = useState([]);
 
   const getPedidosRealizados = () => {
-    let listPedidos = window.localStorage.getItem("pedidos_realizados");
+    let listPedidos = null;
+
+    if (typeof window !== "undefined") {
+      listPedidos = window.localStorage.getItem("pedidos_realizados");
+    }
 
     if (listPedidos) {
       return JSON.parse(listPedidos);
