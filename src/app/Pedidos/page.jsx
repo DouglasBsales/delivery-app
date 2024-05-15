@@ -25,7 +25,6 @@ export default function Pedidos() {
     }
   }, [arrayPedidosRealizados]);
 
-  console.log(arrayPedidosRealizados)
 
   return (
     <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5] overflow-x-hidden">

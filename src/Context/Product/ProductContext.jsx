@@ -75,7 +75,6 @@ export default function ProductContextProvider({ children }) {
     const novosPedidos = [...arrayPedidosRealizados, carrinhoComPagamento];
     localStorage.setItem("pedidos_realizados", JSON.stringify(novosPedidos));
     setArrayPedidosRealizados(novosPedidos);
-    console.log(arrayPedidosRealizados);
 
     setModalPedido(true);
     setPagamentotrue(false);
