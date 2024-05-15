@@ -18,7 +18,7 @@ export default function HomeContextProvider({ children }) {
   const [isSelected, setIsSelected] = useState("Todos");
 
   const itemsFavoritos = () => {
-    const favoritos = localStorage.getItem("favoritos");
+    const favoritos = window.localStorage.getItem("favoritos");
     if (favoritos) {
       return JSON.parse(favoritos);
     } else {

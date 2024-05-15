@@ -11,15 +11,24 @@ export default function Pedidos() {
     useContext(ProductContext);
 
   useEffect(() => {
-    if (localStorage.getItem("pedidos_realizados") !== null) {
-      setArrayPedidosRealizados(
-        JSON.parse(localStorage.getItem("pedidos_realizados"))
-      );
+    if (typeof window !== "undefined") {
+      const storage = window.localStorage.getItem("pedidos_realizados");
+
+      if (storage !== null) {
+        setArrayPedidosRealizados(
+          JSON.parse(localStorage.getItem("pedidos_realizados"))
+        );
+      }
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("pedidos_realizados",JSON.stringify(arrayPedidosRealizados));
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(
+        "pedidos_realizados",
+        JSON.stringify(arrayPedidosRealizados)
+      );
+    }
   }, [arrayPedidosRealizados]);
 
   return (

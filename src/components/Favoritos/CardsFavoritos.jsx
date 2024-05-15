@@ -9,22 +9,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
 const CardsFavoritos = () => {
-  const {
-    items,
-    arrayFavoritos,
-    setArrayFavoritos,
-    setProductExib,
-    setValue,
-  } = useContext(HomeContext);
+  const { items, arrayFavoritos, setArrayFavoritos, setProductExib, setValue } =
+    useContext(HomeContext);
   const { setCountItem } = useContext(ProductContext);
 
   const removeFavorito = (id) => {
-    const itensFavoritos = JSON.parse(localStorage.getItem("favoritos"));
+    const itensFavoritos = JSON.parse(window.localStorage.getItem("favoritos"));
 
     const updateFavoritos = itensFavoritos.filter(
       (product) => product.id !== id
     );
-    localStorage.setItem("favoritos", JSON.stringify(updateFavoritos));
+    window.localStorage.setItem("favoritos", JSON.stringify(updateFavoritos));
     setArrayFavoritos(updateFavoritos);
   };
 

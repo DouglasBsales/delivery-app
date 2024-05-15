@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "@/components/Home/Header";
 import Buttons from "@/components/Home/Buttons";
@@ -11,13 +11,6 @@ import SearchItens from "@/components/Home/SearchItens";
 
 export default function Home() {
   const [allItens, setAllItens] = useState(true);
-
-  {
-    /* 
-  const [arrayPedidosRealizados, setArrayPedidosRealizados] = useState([]);
-  const [arrayFavoritos, setArrayFavoritos] = useState([]);
-  /*/
-  }
 
   return (
     <div className="w-full flex justify-center  bg-[#F5F5F5] overflow-x-hidden">

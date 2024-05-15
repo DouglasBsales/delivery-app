@@ -7,16 +7,24 @@ import { useContext, useEffect } from "react";
 import { HomeContext } from "@/Context/Home/HomeContext";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
-import {Minus, Plus } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 export default function Product() {
   const { productExib } = useContext(HomeContext);
-  const { countItem, handleClickAddItem, handleClickMinusItem, arrayCarrinho, setArrayCarrinho, valuePayment } = useContext(ProductContext);
+  const {
+    countItem,
+    handleClickAddItem,
+    handleClickMinusItem,
+    arrayCarrinho,
+    setArrayCarrinho,
+    valuePayment,
+  } = useContext(ProductContext);
 
   const handleAddToCart = () => {
     const existingItemIndex = arrayCarrinho.findIndex(
@@ -61,20 +69,26 @@ export default function Product() {
     });
   };
 
-
   useEffect(() => {
-    if (localStorage.getItem("itens_carrinho") !== null) {
-      setArrayCarrinho(JSON.parse(localStorage.getItem("itens_carrinho")));
+    if (typeof window !== "undefined") {
+      const storedItems = window.localStorage.getItem("itens_carrinho");
+      if (storedItems !== null) {
+        setArrayCarrinho(JSON.parse(storedItems));
+      }
     }
   }, []);
-
+  
   useEffect(() => {
-    localStorage.setItem("itens_carrinho", JSON.stringify(arrayCarrinho));
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(
+        "itens_carrinho",
+        JSON.stringify(arrayCarrinho)
+      );
+  
+      console.log("funcionando normal");
+    }
   }, [arrayCarrinho]);
-
-
   if (!productExib) return null;
-
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F5] pb-4 overflow-x-hidden">
@@ -164,10 +178,13 @@ export default function Product() {
             />
           </div>
           <div className="w-full flex justify-center pt-7">
-          <Link href="/Home" className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faCircleArrowLeft} className="text-redPrimary size-9"/>
-            <p className="text-blackPrimary font-semibold">Voltar</p>
-          </Link>
+            <Link href="/Home" className="flex items-center gap-2">
+              <FontAwesomeIcon
+                icon={faCircleArrowLeft}
+                className="text-redPrimary size-9"
+              />
+              <p className="text-blackPrimary font-semibold">Voltar</p>
+            </Link>
           </div>
         </div>
       </div>

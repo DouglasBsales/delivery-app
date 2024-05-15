@@ -30,6 +30,7 @@ const ListaCarrinho = ({ item }) => {
     const newArrayCarrinho = arrayCarrinho.filter(
       (cartItem) => cartItem.name !== item.name
     );
+    localStorage.setItem("itens_carrinho", JSON.stringify(newArrayCarrinho))
     setArrayCarrinho(newArrayCarrinho);
   };
 
@@ -44,6 +45,7 @@ const ListaCarrinho = ({ item }) => {
         ...newArrayCarrinho[existingItemIndex],
         quantity: updatedCount,
       };
+      localStorage.setItem("itens_carrinho", JSON.stringify(newArrayCarrinho));
       setArrayCarrinho(newArrayCarrinho);
     } else {
       setArrayCarrinho([
