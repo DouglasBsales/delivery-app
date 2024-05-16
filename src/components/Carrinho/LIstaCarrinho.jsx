@@ -1,8 +1,9 @@
-import { HomeContext } from "@/Context/Home/HomeContext";
-import { ProductContext } from "@/Context/Product/ProductContext";
-import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 import React, { useContext, useState } from "react";
+
+
+import { ProductContext } from "@/Context/Product/ProductContext";
+import { Minus, Plus, Trash2 } from "lucide-react";
 
 const ListaCarrinho = ({ item }) => {
   const { arrayCarrinho, setArrayCarrinho, valuePayment } =
