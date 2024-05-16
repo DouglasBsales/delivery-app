@@ -11,20 +11,18 @@ export default function Pedidos() {
     useContext(ProductContext);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storage = window.localStorage.getItem("pedidos_realizados");
-      if (storage) {
-        setArrayPedidosRealizados(JSON.parse(storage));
-      }
+    const storage = globalThis.localStorage.getItem("pedidos_realizados");
+    if (storage) {
+      setArrayPedidosRealizados(JSON.parse(storage));
     }
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("pedidos_realizados", JSON.stringify(arrayPedidosRealizados));
-    }
+    globalThis.localStorage.setItem(
+      "pedidos_realizados",
+      JSON.stringify(arrayPedidosRealizados)
+    );
   }, [arrayPedidosRealizados]);
-
 
   return (
     <div className="w-full flex flex-col min-h-screen bg-[#F5F5F5] overflow-x-hidden">

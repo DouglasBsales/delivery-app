@@ -8,8 +8,11 @@ export default function ProductContextProvider({ children }) {
   const [countItem, setCountItem] = useState(1);
 
   const getItensCarrinho = () => {
-    let list = globalThis.localStorage.getItem("itens_carrinho");
+    let list = null;
 
+    if (typeof window !== "undefined") {
+      list = localStorage.getItem("itens_carrinho");
+    }
     if (list) {
       return JSON.parse(list);
     } else {
@@ -22,7 +25,11 @@ export default function ProductContextProvider({ children }) {
   const [modalPagamento, setModalPagamento] = useState(false);
 
   const getPedidosRealizados = () => {
-    let listPedidos = globalThis.localStorage.getItem("pedidos_realizados");
+    let listPedidos = null;
+
+    if (typeof window !== "undefined") {
+      listPedidos = localStorage.getItem("pedidos_realizados");
+    }
 
     if (listPedidos) {
       return JSON.parse(listPedidos);
@@ -65,6 +72,8 @@ export default function ProductContextProvider({ children }) {
     }));
 
     const novosPedidos = [...arrayPedidosRealizados, carrinhoComPagamento];
+    
+    localStorage.setItem("pedidos_realizados", JSON.stringify(novosPedidos));
     setArrayPedidosRealizados(novosPedidos);
 
     setModalPedido(true);
