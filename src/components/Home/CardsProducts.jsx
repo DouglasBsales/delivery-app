@@ -8,9 +8,19 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import { ProductContext } from "@/Context/Product/ProductContext";
 
 const CardsProducts = ({ item }) => {
-  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } = useContext(HomeContext);
+  const { arrayFavoritos, setArrayFavoritos, items, setProductExib, setValue } =
+    useContext(HomeContext);
   const { setCountItem } = useContext(ProductContext);
   const [isFavorit, setIsFavorit] = useState(false);
+
+  useEffect(() => {
+    if (arrayFavoritos && arrayFavoritos.length > 0) {
+      const isProductInFavoritos = arrayFavoritos.some(
+        (product) => product.id === item.id
+      );
+      setIsFavorit(isProductInFavoritos);
+    }
+  }, [arrayFavoritos, item.id]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -27,28 +37,27 @@ const CardsProducts = ({ item }) => {
     }
   }, [arrayFavoritos]);
 
-  useEffect(() => {
-    if (arrayFavoritos && arrayFavoritos.length > 0) {
-      const isProductInFavoritos = arrayFavoritos.some(product => product.id === item.id);
-      setIsFavorit(isProductInFavoritos);
-    }
-  }, [arrayFavoritos, item.id]);
-
   const exibirProduct = (id) => {
-    const selected = items.find(product => product.id === id);
+    const selected = items.find((product) => product.id === id);
     setValue("");
     setProductExib(selected);
     setCountItem(1);
   };
 
   const toggleFavoritos = (id) => {
-    const isProductInFavoritos = arrayFavoritos.some(product => product.id === id);
+    setIsFavorit(!isFavorit);
+
+    const isProductInFavoritos = arrayFavoritos.some(
+      (product) => product.id === id
+    );
 
     if (isProductInFavoritos) {
-      const updatedFavoritos = arrayFavoritos.filter(product => product.id !== id);
+      const updatedFavoritos = arrayFavoritos.filter(
+        (product) => product.id !== id
+      );
       setArrayFavoritos(updatedFavoritos);
     } else {
-      const selected = items.find(product => product.id === id);
+      const selected = items.find((product) => product.id === id);
       setArrayFavoritos([...arrayFavoritos, selected]);
     }
   };
@@ -57,11 +66,20 @@ const CardsProducts = ({ item }) => {
     <div className="flex flex-col pt-8">
       <div>
         <div className="w-[315px] justify-end flex absolute pt-[10px]">
-          <button onClick={() => toggleFavoritos(item.id)} className="cursor-pointer">
+          <button
+            onClick={() => toggleFavoritos(item.id)}
+            className="cursor-pointer"
+          >
             {isFavorit ? (
-              <FontAwesomeIcon icon={solidHeart} className="text-redPrimary size-6" />
+              <FontAwesomeIcon
+                icon={solidHeart}
+                className="text-redPrimary size-6"
+              />
             ) : (
-              <FontAwesomeIcon icon={regularHeart} className="text-redPrimary size-6" />
+              <FontAwesomeIcon
+                icon={regularHeart}
+                className="text-redPrimary size-6"
+              />
             )}
           </button>
         </div>
@@ -72,14 +90,18 @@ const CardsProducts = ({ item }) => {
         >
           <div className="flex justify-between">
             <div className="w-[160px] pt-[21px] text-start">
-              <p className="text-xs text-blackOpacity font-semibold">{item.category}</p>
+              <p className="text-xs text-blackOpacity font-semibold">
+                {item.category}
+              </p>
               <p className="text-[18px] text-blackPrimary font-semibold relative top-[-3px]">
                 {item.name}
               </p>
               <p className="text-redPrimary text-xs font-semibold relative bottom-2">
                 {item.portion}
               </p>
-              <p className="text-redPrimary text-xs font-semibold relative bottom-2">{item.ml}</p>
+              <p className="text-redPrimary text-xs font-semibold relative bottom-2">
+                {item.ml}
+              </p>
               <p className="text-[10px] font-semibold text-blackOpacity">
                 {item.descriptionCard}...
               </p>

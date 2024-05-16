@@ -69,20 +69,16 @@ export default function Product() {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedItems = window.localStorage.getItem("itens_carrinho");
-      if (storedItems) {
-        setArrayCarrinho(JSON.parse(storedItems));
-      }
+    const storedItems = globalThis.localStorage.getItem("itens_carrinho");
+    if (storedItems) {
+      setArrayCarrinho(JSON.parse(storedItems));
     }
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("itens_carrinho",JSON.stringify(arrayCarrinho));
-    }
+    globalThis.localStorage.setItem("itens_carrinho",JSON.stringify(arrayCarrinho));
   }, [arrayCarrinho]);
-  
+
   if (!productExib) return null;
 
   return (
