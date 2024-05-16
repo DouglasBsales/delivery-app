@@ -18,11 +18,8 @@ export default function HomeContextProvider({ children }) {
   const [isSelected, setIsSelected] = useState("Todos");
 
   const itemsFavoritos = () => {
-    let favoritos = null;
+    let favoritos = globalThis.localStorage.getItem("favoritos");
 
-    if (typeof window !== "undefined") {
-      favoritos = window.localStorage.getItem("favoritos");
-    }
     if (favoritos) {
       return JSON.parse(favoritos);
     } else {
